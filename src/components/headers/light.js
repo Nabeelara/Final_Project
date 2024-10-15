@@ -6,15 +6,16 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { IoCart } from "react-icons/io5";
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
-import logo from "../../images/cek-toko-sebelah.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { useCart } from "react-use-cart";
 import { Link } from "react-router-dom";
+import logo from "images/logo.png"
 
+/* header */
 const Header = tw.header`
-  flex justify-between items-center
-  max-w-screen-xl mx-auto
+  flex justify-between items-center 
+  max-w-[1646px] mx-auto bg-yellow-800 px-16
 `;
 
 export const NavLinks = tw.div`flex`;
@@ -23,23 +24,23 @@ export const NavLinks = tw.div`flex`;
  * hocus:bg-primary-700 will apply the bg-primary-700 class on hover or focus
  */
 export const NavLink = tw.a`
-  text-lg my-2 lg:text-sm lg:mx-6 lg:my-auto
+  text-lg my-2 lg:text-sm lg:mx-6 lg:my-auto 
   font-semibold tracking-wide transition duration-300
-  pb-1 border-b-2 border-transparent hover:border-primary-500 hocus:text-primary-500
+  pb-1 border-b-2 border-transparent hover:border-yellow-500 hocus:text-yellow-500 text-white
 `;
-
+/* button login */
 export const PrimaryLink = tw(NavLink)`
   lg:mx-0
-  px-8 py-3 rounded bg-primary-500 text-gray-100
-  hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline
-  border-b-0
+  px-8 py-3 rounded bg-yellow-600 text-white
+  hocus:bg-yellow-900 hocus:text-white focus:shadow-outline
+  border-b-0 font-semibold
 `;
 
 export const LogoLink = styled(NavLink)`
-  ${tw`flex items-center font-black border-b-0 text-2xl! ml-0!`};
+  ${tw`flex items-center border-b-0 text-white text-2xl! ml-0!`};
 
   img {
-    ${tw`w-40 mr-3`}
+    ${tw`w-48 h-24 mr-3`}
   }
 `;
 

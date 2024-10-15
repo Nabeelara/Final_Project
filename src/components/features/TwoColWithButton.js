@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import TeamIllustrationSrc from "images/team-illustration-2.svg";
+import Renaissance from "images/Renaissance.jpg"
 import {ReactComponent as SvgDotPattern } from "images/dot-pattern.svg"
 
 const Container = tw.div`relative`;
@@ -28,11 +28,11 @@ const DecoratorBlob = styled(SvgDotPattern)(props => [
 
 const TextContent = tw.div`lg:py-8 text-center md:text-left`;
 
-const Subheading = tw(SubheadingBase)`text-center md:text-left`;
+/* Header */
 const Heading = tw(
   SectionHeading
-)`mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
-const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100`;
+)`mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight text-yellow-800`;
+const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-gray-700 font-sans`;
 
 const PrimaryButton = styled(PrimaryButtonBase)(props => [
   tw`mt-8 md:mt-8 text-sm inline-block mx-auto md:mx-0`,
@@ -41,16 +41,16 @@ const PrimaryButton = styled(PrimaryButtonBase)(props => [
 
 
 export default ({
-  subheading = "Our Expertise",
   heading = (
     <>
-      Designed & Developed by <span tw="text-primary-500">Professionals.</span>
+      Antiques and History <span tw="text-primary-500"></span>
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description = "During the Middle Ages and Renaissance, arts and crafts flourished, producing items that are now highly sought after by collectors. Even though the Industrial Revolution brought mass production, antiques are still valued for their uniqueness and value.",
+  description2 = " Since the 20th century, interest in antiques has increased, making them both collectibles and investments. Thus, antiques are not just objects, but also have stories and meanings that reflect the course of human history.",
   primaryButtonText = "Learn More",
   primaryButtonUrl = "https://timerse.com",
-  imageSrc = TeamIllustrationSrc,
+  imageSrc = Renaissance,
   buttonRounded = true,
   imageRounded = true,
   imageBorder = false,
@@ -71,9 +71,9 @@ export default ({
         </ImageColumn>
         <TextColumn textOnLeft={textOnLeft}>
           <TextContent>
-            <Subheading>{subheading}</Subheading>
             <Heading>{heading}</Heading>
             <Description>{description}</Description>
+            <Description>{description2}</Description>
             <PrimaryButton buttonRounded={buttonRounded} as="a" href={primaryButtonUrl}>
               {primaryButtonText}
             </PrimaryButton>

@@ -39,7 +39,7 @@ const Card = styled.a`
   }
 
   .link {
-    ${tw`mt-auto inline-flex items-center pt-5 text-sm font-bold text-primary-300 leading-none hocus:text-primary-900 transition duration-300`}
+    ${tw`mt-auto inline-flex items-center pt-5 text-sm font-bold text-yellow-900 leading-none hocus:text-yellow-600 transition duration-300`}
     .icon {
       ${tw`ml-2 w-4`}
     }
@@ -76,7 +76,9 @@ export default ({
   subheading = "",
   description = "",
   imageContainerCss = null,
-  imageCss = null
+  imageCss = {
+    filter: 'hue-rotate(140deg)', // Mengubah gambar menjadi hitam putih
+  },
 }) => {
   /*
    * This componets accepts a prop - `cards` which is an array of object denoting the cards. Each object in the cards array can have the following keys (Change it according to your need, you can also add more objects to have more cards in this feature component):

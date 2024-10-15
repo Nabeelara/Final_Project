@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useProductsContext } from "context/product_context";
+import {data} from '../../helpers/Data'
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
 const Header = tw(SectionHeading)``;
@@ -32,9 +33,9 @@ const CancelButton = tw(
 const TabControl = styled.div`
   ${tw`cursor-pointer px-6 py-3 mt-2 sm:mt-0 sm:mr-2 last:mr-0 text-gray-600 font-medium rounded-sm transition duration-300 text-sm sm:text-base w-1/2 sm:w-auto text-center`}
   &:hover {
-    ${tw`bg-gray-300 text-gray-700`}
+    ${tw`bg-yellow-800 bg-opacity-[60%] text-white`}
   }
-  ${(props) => props.active && tw`bg-primary-500! text-gray-100!`}
+  ${(props) => props.active && tw`bg-red-900! text-gray-100!`}
   }
 `;
 
@@ -80,31 +81,28 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-80 w-80 opacity-15 transform -translate-x-2/3 text-primary-500`}
 `;
 
-export default ({ heading = "Checkout the Menu" }) => {
+export default ({ heading = "Buy Now" }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [tabsKeys, setTabsKeys] = useState([
     "Best Sellers",
-    "Main",
-    "Soup",
-    "Desserts",
+    "Furnitures",
+    "Stamps",
+    "Jewellery",
   ]);
   const [activeTab, setActiveTab] = useState("Best Sellers");
   const { addItem, updateItemQuantity, items } = useCart();
-  const { products } = useProductsContext();
-  const getRandomCards = () => {
-    const cards = products;
-    return cards.sort(() => Math.random() - 0.5);
-  };
-
+  // const { products } = useProductsContext();
+  const products = data
+  
   const tabs = {
     "Best Sellers": products
       .sort((a, b) => b.stars - a.stars) // Sort by stars in descending order
       .slice(0, 8), // Get the top 8 items
-    Main: getRandomCards(), // Perbaharui filter berdasarkan Kaos
-    Soup: getRandomCards(), // Perbaharui filter berdasarkan Sepatu
-    Desserts: getRandomCards(), // Perbaharui filter berdasarkan Jaket
+    Furnitures: products.filter((product) => product.category === 'Furnitures'), // Perbaharui filter berdasarkan Kaos
+    Stamps: products.filter((product) => product.category === 'Stamps'), // Perbaharui filter berdasarkan Sepatu
+    Jewellery: products.filter((product) => product.category === 'Jewellery'), // Perbaharui filter berdasarkan Jaket
   };
 
   const openModal = (item) => {
@@ -204,7 +202,7 @@ export default ({ heading = "Checkout the Menu" }) => {
                 >
                   <Link to={`/detail-product/${card.id}`}>
                     <CardImageContainer
-                      image={card.image}
+                      image={card.imageSrc}
                       className="flex items-center justify-center"
                     />
                   </Link>

@@ -6,6 +6,8 @@ import { ContentWithPaddingXl, Container } from "components/misc/Layouts.js";
 import { SectionHeading as Heading, Subheading as SubheadingBase } from "components/misc/Headings.js";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-7.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-8.svg";
+import Customer2 from "images/Customer2.jpg"
+import Customer3 from "images/Customer3.jpeg"
 
 const Subheading = tw(SubheadingBase)`text-center`;
 const Testimonials = tw.div`flex flex-col lg:flex-row items-center lg:items-stretch`;
@@ -30,8 +32,20 @@ export default ({
       imageSrc:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80",
       quote:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+        "I'm so glad I found this store! I bought an antique music box for my grandmother, and she loved it. A satisfying shopping experience; I will definitely come back!",
       customerName: "Charlotte Hale"
+    },
+    {
+      imageSrc: Customer2,
+      quote:
+        "I found this store while searching for something special. The antique collection is amazing! I bought an antique clock, and the owner was very helpful. A satisfying experience; I'll definitely return!",
+      customerName: "Mr. George Thompson"
+    },
+    {
+      imageSrc: Customer3,
+      quote:
+        "I'm always on the hunt for unique antiques, and this store is fantastic! I found a beautiful vintage ring, and the service was friendly and helpful. It's now one of my favorite places to add to my collection!",
+      customerName: "Lyyn Taylor"
     }
   ]
 }) => {

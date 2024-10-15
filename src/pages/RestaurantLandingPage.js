@@ -11,16 +11,14 @@ import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js"
 import DownloadApp from "components/cta/DownloadApp.js";
 import Footer from "components/footers/FiveColumnWithInputForm.js";
 
-import chefIconImageSrc from "images/chef-icon.svg";
-import celebrationIconImageSrc from "images/celebration-icon.svg";
-import shopIconImageSrc from "images/shop-icon.svg";
+import Maps from "components/cards/Artist";
 
 export default () => {
-  const Subheading = tw.span`tracking-wider text-sm font-medium`;
-  const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
-  const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
-  const Description = tw.span`inline-block mt-8`;
+  const HighlightedText = tw.span`bg-yellow-800 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  const HighlightedTextInverse = tw.span`bg-gray-100 text-red-900 px-4 transform -skew-x-12 inline-block`;
+  const Description = tw.span`inline-block mt-8 font-serif`;
   const imageCss = tw`rounded-4xl`;
+  const description="Explore the Uniqueness and Elegance of Antiques at Our Shop! Each Item Tells a Story, Bring a Classic Touch to Your Home Now!"
 
   // TODO
   // 1. Panggil component yang harusnya ada di halaman ini
@@ -28,20 +26,33 @@ export default () => {
 
   return (
     <AnimationRevealPage>
-      <Hero
-        heading={
-          <>
-            Delicious & Affordable{" "}
-            <HighlightedText>Meals Near You.</HighlightedText>
-          </>
-        }
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        imageSrc="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
-        imageCss={imageCss}
-        imageDecoratorBlob={true}
-        primaryButtonText="Order Now"
-        watchVideoButtonText="Meet The Chefs"
-      />
+        <Hero
+          heading={
+            <>
+              Discover{" "}
+              <HighlightedText>The Beauty of The Past</HighlightedText>
+            </>
+          }
+          description="Antiques offer a unique charm, showcasing history's elegance and craftsmanship. Each piece tells a story, adding character and timeless beauty to any space. Discover treasures that transcend generations."
+          imageSrc=""
+          imageCss={""}
+          imageDecoratorBlob={true}
+          primaryButtonText="Show More"
+        />
+
+      <Description>{description} </Description>
+
+      <MainFeature/>
+
+      <ProductGrid/>
+
+      <MainFeature2/>
+
+      <Maps/>
+
+      <Testimonial/>
+
+      <Features/>
 
       <DownloadApp
         text={

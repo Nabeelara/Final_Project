@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import StatsIllustrationSrc from "images/stats-illustration.svg";
+import AntiqueShop from "images/AntiqueShop.jpg"
 import { ReactComponent as SvgDotPattern } from "images/dot-pattern.svg";
 
 const Container = tw.div`relative`;
-const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
+const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto bg-yellow-200 px-20 py-20 md:py-24`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
 const ImageColumn = tw(Column)`md:w-5/12 flex-shrink-0 h-80 md:h-auto relative`;
 const TextColumn = styled(Column)(props => [
@@ -22,11 +22,10 @@ const Image = styled.div(props => [
 ]);
 const TextContent = tw.div`lg:py-8 text-center md:text-left`;
 
-const Subheading = tw(SubheadingBase)`text-center md:text-left`;
 const Heading = tw(
   SectionHeading
-)`mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
-const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100`;
+)` font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
+const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-serif font-medium leading-relaxed text-secondary-100`;
 
 const Statistics = tw.div`flex flex-col items-center sm:block text-center md:text-left mt-4`;
 const Statistic = tw.div`text-left sm:inline-block sm:mr-12 last:mr-0 mt-4`;
@@ -40,16 +39,16 @@ const DecoratorBlob = styled(SvgDotPattern)(props => [
 ]);
 
 export default ({
-  subheading = "Our Track Record",
   heading = (
     <>
-      We have been doing this <wbr /> since <span tw="text-primary-500">1999.</span>
+      Our store has been operating for generations,  <p tw="text-yellow-600 text-xl mt-3 font-semibold font-serif">becoming a part of the history and culture of our community.</p>
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description = "Since its establishment, we have been committed to providing high-quality and unique items that reflect the traditions and family values passed down from our ancestors.",
+  description2 = "In every product we offer, you will find stories and craftsmanship that have been preserved over the years. We believe that each antique not only holds aesthetic value but also a narrative worthy of appreciation and preservation. Proudly, we continue this legacy, providing an authentic and meaningful shopping experience for each of our customers.",
   primaryButtonText = "Learn More",
   primaryButtonUrl = "https://timerse.com",
-  imageSrc = StatsIllustrationSrc,
+  imageSrc = AntiqueShop,
   imageCss = null,
   imageContainerCss = null,
   imageDecoratorBlob = false,
@@ -86,17 +85,9 @@ export default ({
         </ImageColumn>
         <TextColumn textOnLeft={textOnLeft}>
           <TextContent>
-            {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
             <Description>{description}</Description>
-            <Statistics>
-              {statistics.map((statistic, index) => (
-                <Statistic key={index}>
-                  <Value>{statistic.value}</Value>
-                  <Key>{statistic.key}</Key>
-                </Statistic>
-              ))}
-            </Statistics>
+            <Description>{description2}</Description>
             <PrimaryButton as="a" href={primaryButtonUrl}>
               {primaryButtonText}
             </PrimaryButton>

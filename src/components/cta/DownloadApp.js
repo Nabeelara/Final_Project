@@ -9,14 +9,14 @@ import { SectionHeading, Subheading as SubheadingBase } from "components/misc/He
 import appleIconImageSrc from "images/apple-icon.png";
 import googlePlayIconImageSrc from "images/google-play-icon.png"
 
-const Container = tw(ContainerBase)`bg-gray-900 -mx-8`
+const Container = tw(ContainerBase)`bg-red-900 -mx-8`
 const Content = tw(ContentWithPaddingXl)``
 const Row = tw.div`px-8 flex items-center relative z-10 flex-col lg:flex-row text-center lg:text-left justify-center`;
 
 const ColumnContainer = tw.div`max-w-2xl`
 const TextContainer = tw(ColumnContainer)``;
 const Text = tw(SectionHeading)`text-gray-100 lg:text-left max-w-none text-3xl leading-snug`;
-const Subheading = tw(SubheadingBase)`text-yellow-500 mb-4 tracking-wider`
+const Subheading = tw(SubheadingBase)`text-gray-600 mb-4 tracking-wider`
 
 const LinksContainer = tw.div`mt-8 lg:mt-16 flex flex-col items-center sm:block`
 const Link = styled.a`
