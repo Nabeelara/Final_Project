@@ -27,7 +27,7 @@ const GridView = ({ products }) => {
           return (
             <Product
               key={item.id}
-              image={item.image}
+              image={item.imageSrc}
               name={item.name}
               id={item.id}
               price={item.price}
@@ -35,12 +35,12 @@ const GridView = ({ products }) => {
           );
         })}
       </div>
-      <div className="pagination-buttons flex justify-between mt-10">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+      <div className="pagination-buttons flex justify-between mt-10" >
+        <button onClick={handlePrevPage} disabled={currentPage === 1} className="hover:bg-yellow-200 px-4 py-2 rounded-lg hover:cursor-pointer">
           Previous
         </button>
         <span>{`Page ${currentPage} of ${totalPages}`}</span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages} className="hover:bg-yellow-200 px-4 py-2 rounded-lg hover:cursor-pointer">
           Next
         </button>
       </div>

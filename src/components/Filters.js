@@ -167,9 +167,14 @@ const Wrapper = styled.section`
   .search-input {
     padding: 0.5rem;
     background: white;
-    border-radius: var(--radius);
-    border-color: transparent;
+    border-radius: 10px;
+    border: 2px solid grey;
     letter-spacing: var(--spacing);
+  }
+  .search-input:focus {
+    border-color: #732A2A; /* Change border color to red when focused */
+    outline: none; /* Remove the default outline */
+  }
   }
   .search-input::placeholder {
     text-transform: capitalize;

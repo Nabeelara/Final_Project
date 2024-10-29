@@ -55,11 +55,11 @@ export default ({
             <Text>{text}</Text>
             <LinksContainer>
               <Link href={link1Url}>
-                <img src={link1IconSrc} alt=""/>
+                <img src={link1IconSrc} alt=""className="w-auto"/>
                 <span>{link1Text}</span>
               </Link>
               <Link href={link2Url}>
-                <img src={link2IconSrc} alt=""/>
+                <img src={link2IconSrc} alt="" className="w-auto"/>
                 <span>{link2Text}</span>
               </Link>
             </LinksContainer>

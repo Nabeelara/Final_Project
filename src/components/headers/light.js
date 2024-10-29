@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -11,18 +11,16 @@ import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { useCart } from "react-use-cart";
 import { Link } from "react-router-dom";
 import logo from "images/logo.png"
+import { useAuth } from "context/AuthProvider.js";
 
 /* header */
 const Header = tw.header`
-  flex justify-between items-center 
-  max-w-[1646px] mx-auto bg-yellow-800 px-16
+  flex justify-between items-center relative
+  w-full bg-yellow-800 px-16  
 `;
 
-export const NavLinks = tw.div`flex`;
 
-/* hocus: stands for "on hover or focus"
- * hocus:bg-primary-700 will apply the bg-primary-700 class on hover or focus
- */
+export const NavLinks = tw.div`flex`;
 export const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-auto 
   font-semibold tracking-wide transition duration-300
@@ -92,6 +90,16 @@ export default ({
    */
 
   const { totalItems } = useCart();
+  console.log("totalItems", totalItems);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const user = JSON.parse(localStorage.getItem("user"));
+  const {logout} = useAuth();
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  console.log("isDropdownOpen", isDropdownOpen);
 
   //  TODO
   //  1.Panggil local storage user simpan didalam variabel user
@@ -123,10 +131,24 @@ export default ({
           </CartContainer>
         </Link>
       </NavLink>
-
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/#">
-        <Link to={"/login"}>Login</Link>
-      </PrimaryLink>
+      {user ? (
+        <div>
+          <p onClick={handleDropdownToggle} className="cursor-pointer px-4 py-2 text-white hover:bg-yellow-900 rounded">{user.name}</p>
+          {isDropdownOpen && (
+            <div>
+              <button 
+              onClick={logout}
+              className="text-white hover:bg-yellow-900 px-4 hover:text-yellow-700">
+                Logout
+              </button>
+            </div>
+          )}
+        </div>
+      ) : (
+        <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/#">
+          <Link to={"/login"}>Login</Link>
+        </PrimaryLink>
+        )}
     </NavLinks>,
   ];
 

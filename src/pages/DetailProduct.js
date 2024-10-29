@@ -10,36 +10,46 @@ import "react-toastify/dist/ReactToastify.css";
 import { formatPrice } from "helpers/helpers";
 import { FaStar, FaStarHalf, FaCheck } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useProductsContext } from "context/product_context";
+import { data } from "helpers/Data";
+import Swal from "sweetalert2";
 
 const DetailProduct = () => {
   const { id } = useParams();
   const { addItem, items, updateItemQuantity } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [product, setProduct] = useState({});
+  const {product, getProductById, setProduct} = useProductsContext();
   const [showModal, setShowModal] = useState(false);
   const [mainImageIndex, setMainImageIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState(null);
 
+
   const handleColorClick = (color) => {
     setSelectedColor(color);
+    console.log("Color selected:", color);
   };
   const changeMainImage = (index) => {
     setMainImageIndex(index);
   };
 
   const openModal = () => {
-    setSelectedItem(product);
-    setShowModal(true);
+    if (product) {
+      setSelectedItem(product); // Set item yang dipilih dari produk yang ditampilkan
+      setShowModal(true);
+    } else {
+      console.log("Product not found");
+    }
   };
+  
 
   const navigate = useNavigate();
-  const Container = tw.div`relative bg-gray-200 text-gray-700 -mb-8 -mx-8 px-8 py-20 lg:py-24`;
-  const Content = tw.div`max-w-screen-xl mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between`;
+  const Container = tw.div`relative bg-orange-100 text-gray-700 -mb-8 px-8 py-20 lg:py-24 `;
+  const Content = tw.div`content mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between`;
   const ProductImage = tw.img`w-full lg:w-[500px] h-64 lg:h-[400px] object-cover rounded-md mb-8 lg:mb-0`;
   const ProductInfo = tw.div`text-center lg:text-left lg:w-1/2 my-auto`;
   const Title = tw.h2`text-3xl font-semibold mb-2`;
-  const Description = tw.p`text-gray-600 mb-4`;
+  const Description = tw.p`text-gray-600 mb-4 font-bold text-lg`;
   const RatingReviews = tw.p`text-gray-500 mb-4`;
   const Price = tw.p`text-xl font-semibold mt-4`;
   const AddToCartButton = tw.button`bg-red-500 text-white px-6 py-3 rounded-md mt-4 hover:bg-red-700 transition duration-300`;
@@ -51,35 +61,58 @@ const DetailProduct = () => {
   const CancelButton = tw.button`text-sm mt-4 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md ml-5 focus:outline-none cursor-pointer`;
 
   const handleAddToCart = () => {
-    if (selectedItem && selectedColor) {
-      // Lengkapi code berikut
+    if (selectedItem) { // Hilangkan kondisi warna untuk sementara
+      Swal.fire({
+        title: 'Item Added!',
+        text: 'Your item has been added to the cart.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+  
+      // Tambahkan item ke keranjang
+      addItem(selectedItem, quantity);
+      setShowModal(false);
+    } else {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please select a product before adding to the cart.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
     }
   };
+  
 
   useEffect(() => {
     // Your code here
+    // getProductById(id);
+    const findProduct = data.find((item) => item.id.toString() === id);
+    console.log('findProduct', findProduct)
+    setProduct(findProduct);
   }, [id]);
+  console.log(product);
+  console.log(data)
 
   const handleChangePrice = () => {
-    return product.price * quantity;
+    return product?.price * quantity;
   };
 
   const handleQuantityChange = (newQuantity) => {
     setQuantity(Math.max(1, Math.min(10, newQuantity))); // Ensure quantity is within the allowed range
   };
 
-  useEffect(() => {
-    const updatedPrice = handleChangePrice();
-    setProduct((prevProduct) => ({ ...prevProduct, updatedPrice }));
-  }, [quantity, product.price]);
+  // useEffect(() => {
+  //   const updatedPrice = handleChangePrice();
+  //   setProduct((prevProduct) => ({ ...prevProduct, updatedPrice }));
+  // }, [quantity, product.price]);
 
   return (
     <AnimationRevealPage>
       <Header className={"mb-8"} />
 
-      <Container>
+      <Container className="flex justify-center item-center ">
         <Content>
-          <div className="md:flex md:space-x-10 md:mx-auto">
+          <div className="md:flex justify-center gap-8">
             <div>
               <button
                 className="bg-gray-500 p-2 text-white rounded mb-4"
@@ -87,24 +120,24 @@ const DetailProduct = () => {
               >
                 Back to products
               </button>
-              {Array.isArray(product.images) && product.images.length > 0 && (
+              {Array.isArray(product?.images) && product?.images?.length > 0 && (
                 <>
                   <ProductImage
-                    src={product.images[mainImageIndex].url}
-                    alt={product.name}
+                    src={product?.images[mainImageIndex]}
+                    alt={product?.name}
                   />
                 </>
               )}
-              {Array.isArray(product.images) && product.images.length > 1 && (
+              {Array.isArray(product?.images) && product?.images?.length > 1 && (
                 <div className="grid grid-cols-5 sm:gap-2 mt-4 ">
-                  {product.images.map((image, index) => (
+                  {product?.images.map((image, index) => (
                     <img
                       key={index}
-                      src={image.url}
-                      alt={`${product.name} - ${index + 1}`}
+                      src={image}
+                      alt={`${product?.name} - ${index + 1}`}
                       className={`h-20 w-20 rounded cursor-pointer ${
                         index === mainImageIndex
-                          ? "border-2 border-red-500"
+                          ? "border-2 border-yellow-500"
                           : ""
                       }`}
                       onClick={() => changeMainImage(index)}
@@ -115,19 +148,19 @@ const DetailProduct = () => {
             </div>
 
             <ProductInfo>
-              <Title>Nama Product </Title>
+              <Title>{product.name}</Title>
               <RatingReviews>
                 <div className="flex items-center justify-center md:justify-normal">
-                  {product.stars}
+                  {product?.stars}
                   <span className=" flex mx-2">
                     {[...Array(5)].map((_, index) => {
                       const starValue = index + 1;
                       const isHalfStar =
-                        starValue - 0.5 === Math.floor(product.stars);
+                        starValue - 0.5 === Math.floor(product?.rating);
 
                       return (
                         <span key={index} className="my-auto ">
-                          {starValue <= product.stars ? (
+                          {starValue <= product?.rating ? (
                             isHalfStar ? (
                               <FaStarHalf style={{ color: "#fbbf24" }} />
                             ) : (
@@ -143,18 +176,19 @@ const DetailProduct = () => {
                   | Reviews:
                 </div>
               </RatingReviews>
-              <Description>Deskripsi</Description>
+              <Description>Description: </Description>
               <div>
-                <p className="mb-2">Available : </p>
-                <p className="mb-2">SKU : </p>
-                <p className="mb-2">Company :</p>
+                <p className="mb-2">{product?.description} </p>
+                <p className="mb-2">Stock : {product?.stock}</p>
+                <p className="mb-2">Company : {product?.company}</p>
+                <p className="mb-2">{product?.description}</p>
                 <hr className="my-4 h-1 border bg-gray-500" />
 
                 <div className="flex">
                   <p className="my-auto mr-4">Colors : </p>
-                  {Array.isArray(product.colors) && (
+                  {Array.isArray(product?.colors) && (
                     <div className="flex space-x-2">
-                      {product.colors.map((color, index) => (
+                      {product?.colors.map((color, index) => (
                         <div
                           key={index}
                           className={`relative w-8 h-8 rounded-full cursor-pointer border-2 ${
@@ -205,15 +239,8 @@ const DetailProduct = () => {
               </h2>
               <p>Name : {selectedItem.name}</p>
               <p>Quantity : {quantity}</p>
-              <div className="flex items-center justify-center">
-                <p className="my-auto mr-3">Color : </p>
-                <div
-                  className={`relative w-8 h-8 rounded-full cursor-pointer border-2 `}
-                  style={{ backgroundColor: selectedColor }}
-                ></div>
-              </div>
               <button
-                className="text-sm cursor-pointer bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-700"
+                className="text-sm cursor-pointer bg-green-500 text-white px-6 py-3 mt-8 rounded-md hover:bg-green-700"
                 onClick={() => handleAddToCart()}
               >
                 Add

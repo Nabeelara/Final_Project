@@ -73,6 +73,27 @@ export default ({ background }) => {
               </LinkListItem>
             </LinkList>
           </Column>
+
+          <Column>
+            <ColumnHeading>Why Choose Us?</ColumnHeading>
+            <LinkList>
+              <LinkListItem>
+                <Link href="#">Guaranteed Quality</Link>
+              </LinkListItem>
+              <LinkListItem>
+                <Link href="#">Satisfying Shopping Experience</Link>
+              </LinkListItem>
+              <LinkListItem>
+                <Link href="#">Unique Collections</Link>
+              </LinkListItem>
+              <LinkListItem>
+                <Link href="#">Cultural Heritage</Link>
+              </LinkListItem>
+              <LinkListItem>
+                <Link href="#">Affordable Prices</Link>
+              </LinkListItem>
+            </LinkList>
+          </Column>
           
           <SubscribeNewsletterColumn>
             <SubscribeNewsletterContainer>

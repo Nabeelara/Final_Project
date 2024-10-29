@@ -2,157 +2,190 @@
 
 export const data = [
     {
+      id: 1,
       imageSrc:
         "https://i.pinimg.com/control/564x/9e/63/6b/9e636b581dc080a3fefda73d9f37c3d5.jpg",
-      name: "Chicken Chilled",
-      company: "Chicken Main Course",
+      images: ["https://i.pinimg.com/control/564x/9e/63/6b/9e636b581dc080a3fefda73d9f37c3d5.jpg","https://doerrfurniture.com/wp-content/uploads/2022/05/AL71027HN_more_3-1.jpg","https://doerrfurniture.com/wp-content/uploads/2022/05/AL71027HN_more_4-1.jpg","https://doerrfurniture.com/wp-content/uploads/2022/05/AL71027HN_more_5.jpg",],
+      name: "The Grand Staircase Fall Front Desk & Bureaux",
+      company: "Althorp Living History",
       category: "Furnitures",
-      price: 250000,
+      material: "Brass,Glass",
+      price: 15480,
       rating: 5,
       reviews: 87,
       shipping: false,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "The Grand Staircase Fall Front Desk & Bureaux is an elegant antique desk from the 18th or 19th century, featuring a drop-down writing surface and interior compartments for storage. It often displays intricate woodwork and ornate carvings, reflecting the style and craftsmanship of its era."
     },
     {
+      id:2,
       imageSrc:
         "https://i.pinimg.com/control/564x/e2/4a/98/e24a9827fd5a6e68789beba599897660.jpg",
-      name: "Samsa Beef",
-      company: "Fried Mexican Beef",
+        images: ["https://i.pinimg.com/control/564x/e2/4a/98/e24a9827fd5a6e68789beba599897660.jpg","https://ordersweetromance.com/cdn/shop/products/OL_N311-2_1024x1024@2x.jpg?v=1571735434","https://ordersweetromance.com/cdn/shop/products/OL_N311-3_1024x1024@2x.jpg?v=1659469517",],
+      name: "Steampunk Pocket Watch and Antique Key Necklace N311",
+      company: "-",
       category: "Jewellery",
-      price: 175000,
+      material: "Brass,Glass",
+      price: 18.00,
       rating: 4,
       reviews: 34,
       shipping: true,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "Steampunk style pocket watch and antique skeleton keys dangle from this Victorian necklace. Real working clock with a cool vintage vibe. Burnished bronze metal finish. This necklace is 29 long. Quartz movement watch."
     },
     {
+      id:3,
       imageSrc:
         "https://i.pinimg.com/474x/ab/36/cb/ab36cbe91bbee780348cf8f051557d68.jpg",
-      name: "Carnet Nachos Chiken",
-      company: "Chilli Crispy Nachos",
+        images: ["https://i.pinimg.com/474x/ab/36/cb/ab36cbe91bbee780348cf8f051557d68.jpg","https://i.pinimg.com/564x/a9/36/ac/a936acac3220119dc758a1bee262827a.jpg",],
+      name: "Qing Dynasty Stamp",
+      company: "-",
       category: "Stamps",
-      price: 550000,
+      material: "Brass,Glass",
+      price: 1200,
       rating: 3,
       reviews: 26,
       shipping: false,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "The Qing dynasty's first stamps, issued in 1878, are called the Large Dragons. They feature intricate dragon designs, symbolizing imperial power, and are highly valued by collectors for their historical significance and rarity."
     },
     {
+      id:4,
       imageSrc:
         "https://i.pinimg.com/564x/ab/47/9a/ab479a550378e0f47a694c8fbfbbf74e.jpg",
-      name: "Chicken Chilled",
-      company: "Chicken Main Course",
+        images: ["https://i.pinimg.com/564x/ab/47/9a/ab479a550378e0f47a694c8fbfbbf74e.jpg","https://dougschmittantiques.com/wp-content/uploads/2022/2/dental-doctors-cabinets__harvard44x_2016__DSC00022.JPG","https://dougschmittantiques.com/wp-content/uploads/2022/4/dental-doctors-cabinets__harvard44x_2016__DSC00026.JPG", "https://dougschmittantiques.com/wp-content/uploads/2022/8/dental-doctors-cabinets__harvard44x_2016__DSC00040.JPG"],
+      name: "Harvard Oak Dental Cabinet",
+      company: "-",
       category: "Furnitures",
-      price: 250000,
+      material: "Brass,Glass",
+      price: 8900,
       rating: 5,
       reviews: 87,
       shipping: false,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "The Harvard Oak Dental Cabinet is a vintage dental cabinet, typically made of oak, known for its intricate craftsmanship and numerous compartments designed to store dental tools and supplies. It reflects early 20th-century dental equipment design and is a collectible piece of medical history."
     },
     {
+      id:5,
       imageSrc:
         "https://i.pinimg.com/564x/fa/64/99/fa64991bfaf20716b42e264e13d7ae5d.jpg",
-      name: "Samsa Beef",
-      company: "Fried Mexican Beef",
+        images: ["https://i.pinimg.com/564x/fa/64/99/fa64991bfaf20716b42e264e13d7ae5d.jpg","https://i.etsystatic.com/11120875/r/il/745d39/2328169753/il_1588xN.2328169753_lagg.jpg","https://i.etsystatic.com/11120875/r/il/9c7dfe/2280566042/il_1588xN.2280566042_755p.jpg"],
+      name: "Art Nouveau Ornate Antiqued Brass Topaz Faceted Glass Drop Earrings",
+      company: "JessicaAscoughDesign",
       category: "Jewellery",
-      price: 175000,
+      material: "Brass,Glass",
+      price: 42.04,
       rating: 4,
       reviews: 34,
       shipping: true,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "Art Nouveau Ornate Antiqued Brass Topaz Faceted Glass Drop Earrings feature intricate brass designs inspired by the Art Nouveau style, showcasing topaz-colored faceted glass drops. These earrings blend vintage elegance with timeless charm."
     },
     {
+      id:6,
       imageSrc:
         "https://i.pinimg.com/474x/11/72/f4/1172f4e09ea6ec8917ebda8f37446143.jpg",
-      name: "Carnet Nachos Chiken",
-      company: "Chilli Crispy Nachos",
+        images: ["https://i.pinimg.com/474x/11/72/f4/1172f4e09ea6ec8917ebda8f37446143.jpg","https://i.pinimg.com/474x/30/57/6c/30576c87cb0b7f49fae90689b27ed898.jpg","https://i.pinimg.com/474x/c0/61/59/c061598b4d299d69057cb0d65db67f92.jpg"],
+      name: "US Stamp",
+      company: "-",
       category: "Stamps",
-      price: 550000,
+      material: "Brass,Glass",
+      price: 800,
       rating: 3,
       reviews: 26,
       shipping: false,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "USA old stamps often feature historical figures, symbols, and events, with early examples like the 1847 stamps of Benjamin Franklin and George Washington. They are prized by collectors for their historical value, rarity, and intricate designs."
     },
     {
+      id:7,
       imageSrc:
-        "https://i.pinimg.com/564x/48/c2/79/48c279fcc813054d8c9fa41bba8a7c4c.jpg",
-      name: "Guacamole Mex Beef",
-      company: "Mexican Chilli",
+        "https://www.antiqueringboutique.com/cdn/shop/files/Antique_Georgianyellowandwhitetopazclusterringfront.jpg?v=1722247144&width=1517",
+        images: ["https://www.antiqueringboutique.com/cdn/shop/files/Antique_Georgianyellowandwhitetopazclusterringfront.jpg?v=1722247144&width=1517","https://www.antiqueringboutique.com/cdn/shop/files/Antique_Georgianyellowandwhitetopazclusterringback.jpg?v=1722247143&width=1517","https://www.antiqueringboutique.com/cdn/shop/files/Antique_GeorgianYellowandWhiteTopazClusterRing_18ctYellowGold-1.png?v=1722247155&width=1517",],
+      name: "Antique, Georgian yellow and white topaz cluster ring",
+      company: "-",
       category: "Jewellery",
-      price: 350000,
+      material: "Yellow Topaz(2ct), White Topaz(0.76ct),18ct Yellow Gold",
+      price: 4950,
       rating: 4,
       reviews: 95,
       shipping: true,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "A honey-yellow topaz is set at the centre of this ring and encircled by a cluster of distinct white topaz gemstones, each one cut differently to the last. The eclectic assortment of gemstones are all secured in closed-back grain settings and the reverse of the ring is decorated with an ornate motif and the initial 'A' carved in cursive lettering. An exclusive array of precious gemstones paired with an exceptional and distinctive design, what a ring. "
     },
     {
+      id:8,
       imageSrc:
         "https://i.pinimg.com/control/564x/ad/eb/2c/adeb2ca9b6ed3874c0075a29e68228da.jpg",
-      name: "Chillie Cake",
-      company: "Deepfried Chicken",
+        images: ["https://i.pinimg.com/control/564x/ad/eb/2c/adeb2ca9b6ed3874c0075a29e68228da.jpg","https://www.aardvark-antiques.com/wp-content/uploads/2023/10/PXL_20231013_185619659.jpg","https://www.aardvark-antiques.com/wp-content/uploads/2023/10/PXL_20231013_190147351_01.jpg","https://www.aardvark-antiques.com/wp-content/uploads/2023/10/img-62.jpg"],
+      name: "National Antique Cash Register",
+      company: "-",
       category: "Furnitures",
-      price: 120000,
+      material: "Brass",
+      price: 3000,
       rating: 5,
       reviews: 61,
       shipping: false,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "A National Antique Cash Register is a vintage, intricately designed cash register produced by the National Cash Register Company. Known for its brass or nickel-plated exterior and ornate details, it is a collectible piece of early 20th-century retail history."
     },
     {
+      id:9,
       imageSrc:
-        "https://i.pinimg.com/474x/24/80/bb/2480bbea7007ad811b1dbfda879c51fb.jpg",
-      name: "Nelli",
-      company: "Hamburger & Fries",
-      category: "Stamps",
-      price: 250000,
+        "https://i.etsystatic.com/25157722/r/il/7de2b7/6338532948/il_1588xN.6338532948_e53j.jpg",
+        images: ["https://i.etsystatic.com/25157722/r/il/7de2b7/6338532948/il_1588xN.6338532948_e53j.jpg","https://i.etsystatic.com/25157722/r/il/a42367/6338533042/il_1588xN.6338533042_3qg9.jpg","https://i.etsystatic.com/25157722/r/il/9f7b6a/6386598149/il_1588xN.6386598149_8kus.jpg","https://i.etsystatic.com/25157722/r/il/faff00/6386598223/il_1588xN.6386598223_moaf.jpg","https://i.etsystatic.com/25157722/r/il/e3478a/6338533276/il_1588xN.6338533276_1pkp.jpg",],
+      name: "Antique 1.45ct Sapphire, 6.16ct Diamond and Natural Pearl, 9ct Yellow Gold Crown Brooch Circa 1880",
+      company: "-",
+      category: "Jewellery",
+      material: "Gold,Silver",
+      price: 14872,
       rating: 4,
       reviews: 89,
       shipping: true,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "A magnificent, stunning, fine and impressive 1.45 carat sapphire, 6.16 carat diamond and natural pearl, 9 karat yellow gold and silver set crown brooch; part of our diverse array of Victorian brooches."
     },
     {
+      id:10,
       imageSrc:
         "https://i.pinimg.com/control/474x/e5/ed/86/e5ed8603634ac29fc210afba90b2f763.jpg",
-      name: "Jalapeno Poppers",
-      company: "Crispy Soyabeans",
+        images: ["https://i.pinimg.com/control/474x/e5/ed/86/e5ed8603634ac29fc210afba90b2f763.jpg","https://i.ebayimg.com/images/g/LukAAOSw61hic5W3/s-l1600.webp","https://i.ebayimg.com/images/g/fFsAAOSwSGliFIFT/s-l1600.webp",],
+      name: "Antique Vintage Handset Old Telephone European Style Rotary Dial Phone Decor New",
+      company: "Unbranded/Generic",
       category: "Furnitures",
-      price: 150000,
+      material: "Resin",
+      price: 67.01,
       rating: 4,
       reviews: 12,
       shipping: false,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "This Antique Vintage Handset Old Telephone is a European-style rotary dial phone, designed with classic details to resemble early 20th-century models. Though new, it serves as decorative decor, blending old-world charm with modern craftsmanship."
     },
     {
+      id:11,
       imageSrc:
-        "https://i.pinimg.com/564x/af/07/f8/af07f8dbb4b8c534b37c314bc36a2053.jpg",
-      name: "Cajun Chicken",
-      company: "Roasted Chicken & Egg",
+        "https://i.pinimg.com/enabled_hi/564x/c1/3a/66/c13a6699bd8ba53f55197d25c4f1b3fc.jpg",
+        images: ["https://i.pinimg.com/enabled_hi/564x/c1/3a/66/c13a6699bd8ba53f55197d25c4f1b3fc.jpg","https://i.pinimg.com/enabled_hi/564x/89/1e/c1/891ec16f545b5d6242e344e6707dff8f.jpg","https://i.pinimg.com/564x/c8/f9/76/c8f9767fe4422a45ce458a6408f42b2a.jpg"],
+      name: "Indonesian Stamp",
+      company: "-",
       category: "Stamps",
-      price: 450000,
+      material: "Brass,Glass",
+      price: 10.08,
       rating: 3,
       reviews: 19,
       shipping: false,
       stock: 10,
       colors: [],
-      description: "testing satu dua tiga"
+      description: "Old Indonesian stamp"
     },
   ];
