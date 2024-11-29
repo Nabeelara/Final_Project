@@ -21,13 +21,13 @@ const LeftColumn = tw.div`relative lg:w-6/12 lg:pr-12 flex-shrink-0 text-center 
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
 
 const Heading = tw.h1`
-  font-black text-yellow-500 text-3xl md:text-5xl leading-snug max-w-3xl`;
+  font-black text-[#FF699C] text-3xl md:text-5xl leading-snug max-w-3xl`;
 
 const Paragraph = tw.p`my-5 lg:my-8 text-sm lg:text-base font-medium font-serif  text-white p-3 rounded-xl max-w-lg mx-auto lg:mx-0
 relative  bg-opacity-50`;
 
 const Actions = tw.div`flex flex-col items-center sm:flex-row justify-center lg:justify-start mt-8`;
-const PrimaryButton = tw.button`font-bold px-8 lg:px-10 py-3 rounded bg-yellow-600 text-white hocus:bg-yellow-800 focus:shadow-outline focus:outline-none transition duration-300`;
+const PrimaryButton = tw.button`font-bold px-8 lg:px-10 py-3 rounded bg-[#FF6A9D] text-white hocus:bg-[#B8DAF7] focus:shadow-outline focus:outline-none transition duration-300`;
 const WatchVideoButton = styled.button`
   ${tw`mt-4 sm:mt-0 sm:ml-8 flex items-center text-white transition duration-300 hocus:text-pink-500 focus:outline-none`}
   .playIcon {
@@ -76,11 +76,11 @@ export default ({
   return (
     <>
       <Header />
-      <Container style={{ backgroundImage: `url("https://i.etsystatic.com/9007075/r/il/678653/5928888416/il_1588xN.5928888416_82nt.jpg")`,
+      <Container style={{ backgroundImage: `url("https://i.pinimg.com/736x/4d/ec/8e/4dec8ee196667eee802ced6e9cd76ed8.jpg")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
        }}>
-        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay */}
+        <div className="absolute inset-0 bg-black opacity-10"></div> {/* Overlay */}
         <TwoColumn>
           <LeftColumn>
             <Heading>{heading}</Heading>

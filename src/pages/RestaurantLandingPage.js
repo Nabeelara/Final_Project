@@ -10,15 +10,14 @@ import ProductGrid from "components/cards/TabCardGrid.js";
 import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
 import DownloadApp from "components/cta/DownloadApp.js";
 import Footer from "components/footers/FiveColumnWithInputForm.js";
-
+import candyImage from "images/candyy.jpg";
 import Maps from "components/cards/Artist";
 
 export default () => {
-  const HighlightedText = tw.span`bg-yellow-800 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  const HighlightedText = tw.span`bg-[#2CB8E3] text-gray-100 px-4 transform -skew-x-12 inline-block`;
   const HighlightedTextInverse = tw.span`bg-gray-100 text-red-900 px-4 transform -skew-x-12 inline-block`;
-  const Description = tw.span`inline-block mt-8 font-serif`;
-  const imageCss = tw`rounded-4xl`;
-  const description="Explore the Uniqueness and Elegance of Antiques at Our Shop! Each Item Tells a Story, Bring a Classic Touch to Your Home Now!"
+  const Description = tw.span`inline-block mt-8  `;
+  const description="Explore Our Sweet Selection, from fruity gummies to creamy chocolates, our collection is crafted to bring happiness in every bite. Indulge in our unique creations, perfect for gifts, celebrations, or a treat just for you!"
 
   // TODO
   // 1. Panggil component yang harusnya ada di halaman ini
@@ -30,17 +29,22 @@ export default () => {
           heading={
             <>
               Discover{" "}
-              <HighlightedText>The Beauty of The Past</HighlightedText>
+              <HighlightedText>The Joy of Sweetness!</HighlightedText>
             </>
           }
-          description="Antiques offer a unique charm, showcasing history's elegance and craftsmanship. Each piece tells a story, adding character and timeless beauty to any space. Discover treasures that transcend generations."
-          imageSrc=""
-          imageCss={""}
+          description={
+            <span style={{ textShadow: "2px 2px 4px rgba(0.7, 0.7, 0.7, 0.7)" }}>
+              Welcome to Candy Wonderland!<br/> Dive into a world of sweetness where every treat 
+              tells a story of joy, love, and delicious indulgence. From handcrafted chocolates 
+              to colorful candies, we’re here to make your sweetest dreams come true.
+            </span>}
+          imageSrc={candyImage}
+          imageCss="w-full h-auto rounded-lg shadow-lg"
           imageDecoratorBlob={true}
           primaryButtonText="Show More"
         />
 
-      <Description>{description} </Description>
+      <Description className="ml-8">{description} </Description>
 
       <MainFeature/>
 

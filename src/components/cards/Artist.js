@@ -26,7 +26,7 @@ export default () => {
   return (
     <Container>
       <SectionHeading>We Also Have</SectionHeading>
-      <TwoColumn>
+      <TwoColumn className="md:gap-8">
         <ImageWrapper>
           <img src={Furniture} alt="Furniture" />
         </ImageWrapper>

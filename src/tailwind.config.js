@@ -264,6 +264,7 @@ module.exports = {
     },
     fontFamily: {
       display: ['Inter', 'system-ui'],
+      fun: ['Pacifico', 'cursive'],
       sans: [
         'system-ui',
         '-apple-system',

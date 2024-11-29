@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
 import { getUniqueValues, formatPrice } from "../helpers/helpers";
 import { FaCheck } from "react-icons/fa";
+import axios from "axios";
 
 const Filters = () => {
   const {
@@ -20,19 +21,41 @@ const Filters = () => {
     all_products,
     clearFilters,
   } = useFilterContext();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const [categories, setCategories] = useState([]);
 
-  const categories = getUniqueValues(all_products, "category");
-  const companies = getUniqueValues(all_products, "company");
+  const getCategories = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:3000/api/categories",
+        {
+          headers: {
+            Authorization: `${user.token}`,
+          }
+        }
+      );
+      const category = response.data.data.map((item) => item.name);
+      setCategories(["all", ...category]);
+
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  useEffect (() => (
+    getCategories()
+  ), [])
   const colors = getUniqueValues(all_products, "colors");
+  const companies = getUniqueValues(all_products, "company"); 
 
-  console.log("categories", categories);
+
   return (
     <Wrapper>
-      <div className="content">
-        <form onSubmit={(e) => e.preventDefault()}>
-          {/* search input */}
-          <div className="form-control">
-            <input
+       <div className="content">
+         <form onSubmit={(e) => e.preventDefault()}>
+           {/* search input */}
+           <div className="form-control">
+             <input
               type="text"
               name="text"
               value={text}
@@ -58,8 +81,8 @@ const Filters = () => {
                         category === c.toLowerCase() ? "active" : null
                       }`}
                     >
-                      {c}
-                    </button>
+                       {c}
+                     </button>
                   );
                 })}
             </div>

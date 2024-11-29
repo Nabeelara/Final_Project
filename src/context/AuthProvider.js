@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/auth/login`,
+        `http://localhost:3000/api/auth/sign-in`,
         dataUser
       );
 
@@ -37,14 +37,14 @@ export const AuthProvider = ({ children }) => {
 
       navigation(redirectPath, { replace: true });
       localStorage.setItem("user", JSON.stringify(user));
-      alert("Login Berhasil, Selamat Datang Admin");
+      alert("Login Successfuly, Welcome Admin");
       navigation("/");
       setUser(user);
     } catch (error) {
       console.error(error);
       alert(
         error?.response?.data?.error ||
-          "Login Gagal, Terjadi Kesalahan Pada Server"
+          "Login Failed, Terjadi Kesalahan Pada Server"
       );
       setError(error);
     } finally {

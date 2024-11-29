@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import Renaissance from "images/Renaissance.jpg"
 import {ReactComponent as SvgDotPattern } from "images/dot-pattern.svg"
+import promo from "images/promo.jpg"
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24 items-center`;
@@ -31,26 +31,25 @@ const TextContent = tw.div`lg:py-8 text-center md:text-left`;
 /* Header */
 const Heading = tw(
   SectionHeading
-)`mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight text-yellow-800`;
+)`mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight text-[#361614]`;
 const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-gray-700 font-sans`;
 
 const PrimaryButton = styled(PrimaryButtonBase)(props => [
   tw`mt-8 md:mt-8 text-sm inline-block mx-auto md:mx-0`,
-  props.buttonRounded && tw`rounded-full`
+  props.buttonRounded && tw`rounded-md bg-[#FF689B] hover:bg-[#2DB7E3]`
 ]);
 
 
 export default ({
   heading = (
     <>
-      Antiques and History <span tw="text-primary-500"></span>
+      Satisfy Your Sweet Cravings – Shop Now and Get 20% Off Your First Order! 
     </>
   ),
-  description = "During the Middle Ages and Renaissance, arts and crafts flourished, producing items that are now highly sought after by collectors. Even though the Industrial Revolution brought mass production, antiques are still valued for their uniqueness and value.",
-  description2 = " Since the 20th century, interest in antiques has increased, making them both collectibles and investments. Thus, antiques are not just objects, but also have stories and meanings that reflect the course of human history.",
-  primaryButtonText = "Learn More",
+  description = "Dive into a world of sugary delights and enjoy exclusive savings on your first purchase!",
+  primaryButtonText = "Order now",
   primaryButtonUrl = "https://timerse.com",
-  imageSrc = Renaissance,
+  imageSrc = promo,
   buttonRounded = true,
   imageRounded = true,
   imageBorder = false,
@@ -63,7 +62,7 @@ export default ({
   // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
 
   return (
-    <Container>
+    <Container className="md:mx-8">
       <TwoColumn>
         <ImageColumn>
           <Image css={imageCss} src={imageSrc} imageBorder={imageBorder} imageShadow={imageShadow} imageRounded={imageRounded}/>
@@ -73,7 +72,6 @@ export default ({
           <TextContent>
             <Heading>{heading}</Heading>
             <Description>{description}</Description>
-            <Description>{description2}</Description>
             <PrimaryButton buttonRounded={buttonRounded} as="a" href={primaryButtonUrl}>
               {primaryButtonText}
             </PrimaryButton>

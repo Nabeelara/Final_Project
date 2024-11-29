@@ -19,7 +19,7 @@ const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`
 const Header = tw(SectionHeading)``;
 const TabsControl = tw.div`flex flex-wrap bg-gray-200 px-2 py-2 rounded leading-none mt-12 xl:mt-0`;
 
-const ModalContent = tw.div`bg-white p-8 rounded-lg text-center`;
+const ModalContent = tw.div`bg-white rounded-lg text-center`;
 const QuantityControl = tw.div`flex items-center justify-center space-x-4 mb-4`;
 const QuantityButton = tw(PrimaryButtonBase)`text-lg font-bold`;
 const QuantityDisplay = tw.div`text-lg font-bold`;
@@ -33,9 +33,9 @@ const CancelButton = tw(
 const TabControl = styled.div`
   ${tw`cursor-pointer px-6 py-3 mt-2 sm:mt-0 sm:mr-2 last:mr-0 text-gray-600 font-medium rounded-sm transition duration-300 text-sm sm:text-base w-1/2 sm:w-auto text-center`}
   &:hover {
-    ${tw`bg-yellow-800 bg-opacity-[60%] text-white`}
+    ${tw`bg-[#FF6A9D] bg-opacity-[60%] text-white`}
   }
-  ${(props) => props.active && tw`bg-red-900! text-gray-100!`}
+  ${(props) => props.active && tw`bg-[#2DB7E3]! text-gray-100!`}
   }
 `;
 
@@ -87,22 +87,22 @@ export default ({ heading = "Buy Now" }) => {
   const [quantity, setQuantity] = useState(1);
   const [tabsKeys, setTabsKeys] = useState([
     "Best Sellers",
-    "Furnitures",
-    "Stamps",
-    "Jewellery",
+    "Chocolate",
+    "Gummy",
+    "Hard_Candy",
   ]);
   const [activeTab, setActiveTab] = useState("Best Sellers");
   const { addItem, updateItemQuantity, items } = useCart();
-  // const { products } = useProductsContext();
-  const products = data
+  const { product, getProductsById, products } = useProductsContext();
+ 
   
   const tabs = {
     "Best Sellers": products
-      .sort((a, b) => b.stars - a.stars) // Sort by stars in descending order
+      // Sort by stars in descending order
       .slice(0, 8), // Get the top 8 items
-    Furnitures: products.filter((product) => product.category === 'Furnitures'), // Perbaharui filter berdasarkan Kaos
-    Stamps: products.filter((product) => product.category === 'Stamps'), // Perbaharui filter berdasarkan Sepatu
-    Jewellery: products.filter((product) => product.category === 'Jewellery'), // Perbaharui filter berdasarkan Jaket
+    Chocolate: products.filter((product) => product.category.name === 'Chocolate'), // Perbaharui filter berdasarkan Kaos
+    Gummy: products.filter((product) => product.category.name === 'Gummy'), // Perbaharui filter berdasarkan Sepatu
+    Hard_Candy: products.filter((product) => product.category.name === 'Hard Candy'), // Perbaharui filter berdasarkan Jaket
   };
 
   const openModal = (item) => {
@@ -154,9 +154,10 @@ export default ({ heading = "Buy Now" }) => {
       );
     }
   };
+  console.log(products)
 
   return (
-    <Container>
+    <Container className="md:mx-8">
       <ContentWithPaddingXl>
         <HeaderRow>
           <Header>{heading}</Header>
@@ -202,7 +203,7 @@ export default ({ heading = "Buy Now" }) => {
                 >
                   <Link to={`/detail-product/${card.id}`}>
                     <CardImageContainer
-                      image={card.imageSrc}
+                      image={`https://lhxsdxtfgwcmsdsxohdi.supabase.co/storage/v1/object/public/images/${card.images[0]}`}
                       className="flex items-center justify-center"
                     />
                   </Link>
@@ -248,93 +249,4 @@ export default ({ heading = "Buy Now" }) => {
       <DecoratorBlob2 />
     </Container>
   );
-};
-
-/* This function is only there for demo purposes. It populates placeholder cards */
-const getRandomCards = () => {
-  const cards = [
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Chicken Chilled",
-      content: "Chicken Main Course",
-      price: "$5.99",
-      rating: "5.0",
-      reviews: "87",
-      url: "#",
-    },
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1582254465498-6bc70419b607?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Samsa Beef",
-      content: "Fried Mexican Beef",
-      price: "$3.99",
-      rating: "4.5",
-      reviews: "34",
-      url: "#",
-    },
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Carnet Nachos",
-      content: "Chilli Crispy Nachos",
-      price: "$3.99",
-      rating: "3.9",
-      reviews: "26",
-      url: "#",
-    },
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Guacamole Mex",
-      content: "Mexican Chilli",
-      price: "$3.99",
-      rating: "4.2",
-      reviews: "95",
-      url: "#",
-    },
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Chillie Cake",
-      content: "Deepfried Chicken",
-      price: "$2.99",
-      rating: "5.0",
-      reviews: "61",
-      url: "#",
-    },
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Nelli",
-      content: "Hamburger & Fries",
-      price: "$7.99",
-      rating: "4.9",
-      reviews: "89",
-      url: "#",
-    },
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Jalapeno Poppers",
-      content: "Crispy Soyabeans",
-      price: "$8.99",
-      rating: "4.6",
-      reviews: "12",
-      url: "#",
-    },
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Cajun Chicken",
-      content: "Roasted Chicken & Egg",
-      price: "$7.99",
-      rating: "4.2",
-      reviews: "19",
-      url: "#",
-    },
-  ];
-
-  // Shuffle array
-  return cards.sort(() => Math.random() - 0.5);
 };

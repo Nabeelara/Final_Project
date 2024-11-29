@@ -10,27 +10,27 @@ import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { useCart } from "react-use-cart";
 import { Link } from "react-router-dom";
-import logo from "images/logo.png"
+import logo from "images/logoo.png"
 import { useAuth } from "context/AuthProvider.js";
 
 /* header */
 const Header = tw.header`
   flex justify-between items-center relative
-  w-full bg-yellow-800 px-16  
+  w-screen bg-[#F8C3D7] px-16  
 `;
 
 
 export const NavLinks = tw.div`flex`;
 export const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-auto 
-  font-semibold tracking-wide transition duration-300
-  pb-1 border-b-2 border-transparent hover:border-yellow-500 hocus:text-yellow-500 text-white
+  font-semibold tracking-widest tracking-wide transition duration-300
+  pb-1 border-b-2 border-transparent hover:border-[#2CB8E3] hocus:text-[#2CB8E3] text-[#FF689B] hover:scale-110 transform
 `;
 /* button login */
 export const PrimaryLink = tw(NavLink)`
   lg:mx-0
-  px-8 py-3 rounded bg-yellow-600 text-white
-  hocus:bg-yellow-900 hocus:text-white focus:shadow-outline
+  px-8 py-3 rounded bg-[#2BB9E3] text-white
+  hocus:bg-[#8DD1F1] hocus:text-white focus:shadow-outline
   border-b-0 font-semibold
 `;
 
@@ -38,13 +38,13 @@ export const LogoLink = styled(NavLink)`
   ${tw`flex items-center border-b-0 text-white text-2xl! ml-0!`};
 
   img {
-    ${tw`w-48 h-24 mr-3`}
+    ${tw`w-48 h-32 mr-3 p-5`}
   }
 `;
 
 export const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between `;
 export const NavToggle = tw.button`
-  lg:hidden z-20 focus:outline-none hocus:text-primary-500 transition duration-300
+  lg:hidden z-20 focus:outline-none text-[#2DB7E3] hocus:text-[#FF699C] transition duration-300
 `;
 export const MobileNavLinks = motion(styled.div`
   ${tw`lg:hidden z-10 fixed top-0 inset-x-0 mx-4 my-6 p-8 border text-center rounded-lg text-gray-900 bg-white`}
@@ -133,12 +133,12 @@ export default ({
       </NavLink>
       {user ? (
         <div>
-          <p onClick={handleDropdownToggle} className="cursor-pointer px-4 py-2 text-white hover:bg-yellow-900 rounded">{user.name}</p>
+          <p onClick={handleDropdownToggle} className="cursor-pointer px-4 py-2 text-white hover:bg-[#2DB7E3] rounded">{user.name}</p>
           {isDropdownOpen && (
             <div>
               <button 
               onClick={logout}
-              className="text-white hover:bg-yellow-900 px-4 hover:text-yellow-700">
+              className="text-white hover:bg-[#2DB7E3] px-4">
                 Logout
               </button>
             </div>
