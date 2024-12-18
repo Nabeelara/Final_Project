@@ -1,16 +1,15 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import AntiqueShop from "images/AntiqueShop.jpg"
+import AntiqueShop from "images/oldpink.webp"
 import { ReactComponent as SvgDotPattern } from "images/dot-pattern.svg";
 
 const Container = tw.div`relative`;
-const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto bg-yellow-200 px-20 py-20 md:py-24`;
+const TwoColumn = tw.div`flex flex-col md:flex-row justify-between h-screen sm:h-auto bg-blue-100 px-20 py-20 md:py-24`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
-const ImageColumn = tw(Column)`md:w-5/12 flex-shrink-0 h-80 md:h-auto relative`;
+const ImageColumn = tw(Column)`md:w-5/12 flex-shrink-0 h-80 md:h-auto relative `;
 const TextColumn = styled(Column)(props => [
   tw`md:w-7/12 mt-16 md:mt-0`,
   props.textOnLeft ? tw`md:mr-12 lg:mr-16 md:order-first` : tw`md:ml-12 lg:ml-16 md:order-last`
@@ -24,15 +23,10 @@ const TextContent = tw.div`lg:py-8 text-center md:text-left`;
 
 const Heading = tw(
   SectionHeading
-)` font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
+)` font-black text-left text-[#FF689B] text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
 const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-serif font-medium leading-relaxed text-secondary-100`;
 
-const Statistics = tw.div`flex flex-col items-center sm:block text-center md:text-left mt-4`;
-const Statistic = tw.div`text-left sm:inline-block sm:mr-12 last:mr-0 mt-4`;
-const Value = tw.div`font-bold text-lg sm:text-xl lg:text-2xl text-secondary-500 tracking-wide`;
-const Key = tw.div`font-medium text-primary-700`;
-
-const PrimaryButton = tw(PrimaryButtonBase)`mt-8 md:mt-10 text-sm inline-block mx-auto md:mx-0`;
+const PrimaryButton = tw(PrimaryButtonBase)`mt-8 md:mt-10 text-sm inline-block mx-auto md:mx-0 bg-[#FF689B] hover:bg-[#B7534E]`;
 
 const DecoratorBlob = styled(SvgDotPattern)(props => [
   tw`w-20 h-20 absolute right-0 bottom-0 transform translate-x-1/2 translate-y-1/2 fill-current text-primary-500 -z-10`
@@ -41,11 +35,11 @@ const DecoratorBlob = styled(SvgDotPattern)(props => [
 export default ({
   heading = (
     <>
-      Our store has been operating for generations,  <p tw="text-yellow-600 text-xl mt-3 font-semibold font-serif">becoming a part of the history and culture of our community.</p>
+      Bringing sweetness through generations
     </>
   ),
-  description = "Since its establishment, we have been committed to providing high-quality and unique items that reflect the traditions and family values passed down from our ancestors.",
-  description2 = "In every product we offer, you will find stories and craftsmanship that have been preserved over the years. We believe that each antique not only holds aesthetic value but also a narrative worthy of appreciation and preservation. Proudly, we continue this legacy, providing an authentic and meaningful shopping experience for each of our customers.",
+  description = "Founded in 1925 by Clara Peterson, our candy store began as a small neighborhood shop offering handcrafted chocolates, caramels, and her famous peppermint drops. Clara’s dedication to quality and her innovative penny candies during the Great Depression made the store a beloved gathering place for families, even in challenging times.",
+  description2 = "Today, the store remains a family-run business, blending traditional recipes with modern flavors. Generations continue to visit, cherishing its timeless charm and delicious treats. Clara’s vision lives on: “Spreading happiness, one candy at a time.",
   primaryButtonText = "Learn More",
   primaryButtonUrl = "https://timerse.com",
   imageSrc = AntiqueShop,
@@ -78,7 +72,7 @@ export default ({
 
   return (
     <Container>
-      <TwoColumn css={!imageInsideDiv && tw`md:items-center`}>
+      <TwoColumn css={!imageInsideDiv && tw`md:items-center sm:flex sm:flex-row md:flex md:flex-row`}>
         <ImageColumn css={imageContainerCss}>
           {imageInsideDiv ? <Image imageSrc={imageSrc} css={imageCss} /> : <img src={imageSrc} css={imageCss} alt="" />}
           {imageDecoratorBlob && <DecoratorBlob css={imageDecoratorBlobCss} />}

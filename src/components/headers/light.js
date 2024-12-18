@@ -89,8 +89,8 @@ export default ({
    * If you manipulate links here, all the styling on the links is already done for you. If you pass links yourself though, you are responsible for styling the links or use the helper styled components that are defined here (NavLink)
    */
 
-  const { totalItems } = useCart();
-  console.log("totalItems", totalItems);
+  const { items } = useCart();
+  console.log("totalItems", items);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
   const {logout} = useAuth();
@@ -127,18 +127,18 @@ export default ({
         <Link to="/cart">
           <CartContainer>
             <CartIcon />
-            <TotalItems>{totalItems}</TotalItems>
+            <TotalItems>{items.length}</TotalItems>
           </CartContainer>
         </Link>
       </NavLink>
       {user ? (
         <div>
-          <p onClick={handleDropdownToggle} className="cursor-pointer px-4 py-2 text-white hover:bg-[#2DB7E3] rounded">{user.name}</p>
+          <p onClick={handleDropdownToggle} className="cursor-pointer px-4 py-3 text-white bg-[#FF699C] hover:bg-[#2DB7E3] rounded">{user.name}</p>
           {isDropdownOpen && (
             <div>
               <button 
               onClick={logout}
-              className="text-white hover:bg-[#2DB7E3] px-4">
+              className="text-white hover:bg-[#2DB7E3] px-4 py-3 rounded mt-2">
                 Logout
               </button>
             </div>

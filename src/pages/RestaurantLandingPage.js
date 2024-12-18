@@ -14,9 +14,21 @@ import candyImage from "images/candyy.jpg";
 import Maps from "components/cards/Artist";
 
 export default () => {
-  const HighlightedText = tw.span`bg-[#2CB8E3] text-gray-100 px-4 transform -skew-x-12 inline-block`;
-  const HighlightedTextInverse = tw.span`bg-gray-100 text-red-900 px-4 transform -skew-x-12 inline-block`;
-  const Description = tw.span`inline-block mt-8  `;
+  const HighlightedText = tw.span`
+  bg-gradient-to-r from-[#2CB8E3] to-[#1893D0] text-gray-100 px-4 
+  transform -skew-x-12 inline-block shadow-md hover:shadow-lg transition duration-300
+`;
+
+const HighlightedTextInverse = tw.span`
+  bg-gradient-to-r from-gray-200 to-gray-100 text-red-900 px-4 
+  transform -skew-x-12 inline-block shadow-md hover:shadow-lg transition duration-300
+`;
+
+const Description = tw.span`
+inline-block mt-8 ml-8 text-gray-700 text-lg leading-relaxed 
+tracking-wide sm:ml-16 sm:text-xl sm:leading-loose
+`;
+
   const description="Explore Our Sweet Selection, from fruity gummies to creamy chocolates, our collection is crafted to bring happiness in every bite. Indulge in our unique creations, perfect for gifts, celebrations, or a treat just for you!"
 
   // TODO
@@ -26,23 +38,32 @@ export default () => {
   return (
     <AnimationRevealPage>
         <Hero
-          heading={
-            <>
-              Discover{" "}
-              <HighlightedText>The Joy of Sweetness!</HighlightedText>
-            </>
-          }
-          description={
-            <span style={{ textShadow: "2px 2px 4px rgba(0.7, 0.7, 0.7, 0.7)" }}>
-              Welcome to Candy Wonderland!<br/> Dive into a world of sweetness where every treat 
-              tells a story of joy, love, and delicious indulgence. From handcrafted chocolates 
-              to colorful candies, we’re here to make your sweetest dreams come true.
-            </span>}
-          imageSrc={candyImage}
-          imageCss="w-full h-auto rounded-lg shadow-lg"
-          imageDecoratorBlob={true}
-          primaryButtonText="Show More"
-        />
+  heading={
+    <>
+      Discover{" "}
+      <HighlightedText>of Sweetness!</HighlightedText>
+    </>
+  }
+  description={
+    <span
+      style={{
+        textShadow: "2px 2px 4px rgba(0.5, 0.5, 0.5, 0.7)",
+        fontSize: "1.1rem",
+        lineHeight: "1.8rem",
+      }}
+    >
+      Welcome to Candy Wonderland!<br />
+      Dive into a world of sweetness where every treat tells a story of joy, love, and delicious indulgence.
+      From handcrafted chocolates to colorful candies, we’re here to make your sweetest dreams come true.
+    </span>
+  }
+  imageSrc={candyImage}
+  imageCss="w-full h-auto rounded-lg shadow-2xl transition transform hover:scale-105"
+  imageDecoratorBlob={true}
+  primaryButtonText="Show More"
+  primaryButtonCss={tw`bg-[#2CB8E3] hover:bg-[#1893D0] text-gray-100 px-8 py-4 rounded-lg shadow-md transition-all`}
+/>
+
 
       <Description className="ml-8">{description} </Description>
 

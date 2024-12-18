@@ -29,7 +29,8 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/auth/sign-in`,
+        // `http://localhost:3001/api/auth/sign-in`
+        `${process.env.REACT_APP_API_URL}/api/auth/sign-in`,
         dataUser
       );
 
@@ -37,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
       navigation(redirectPath, { replace: true });
       localStorage.setItem("user", JSON.stringify(user));
-      alert("Login Successfuly, Welcome Admin");
+      alert("Login Successfuly, Welcome " + user.name);
       navigation("/");
       setUser(user);
     } catch (error) {

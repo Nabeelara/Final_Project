@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { data } from "helpers/Data";
 
 const ProductsContext = React.createContext();
 
@@ -11,8 +10,8 @@ export const ProductsProvider = ({ children }) => {
   const fetchProducts = async () => {
     try {
       const response = await axios.get(
-        // "https://65cc9d71dd519126b83f161f.mockapi.io/api/v1/products"
-        "http://localhost:3000/api/products"
+        `${process.env.REACT_APP_API_URL}/api/products`,
+        // "http://localhost:3001/api/products"
       );
 
       // Memotong array hasil response menjadi 14 data
@@ -28,12 +27,12 @@ export const ProductsProvider = ({ children }) => {
   const getProductById = async (id) => {
     try {
       const response = await axios.get(
-        `https://65cc9d71dd519126b83f161f.mockapi.io/api/v1/products/${id}`
+        // `http://localhost:3001/api/products/${id}`
+        `${process.env.REACT_APP_API_URL}/api/products/${id}`
       );
       setProduct(response.data);
     } catch (err) {
-      console.log(`Failed to render product by ID: ${err}`);
-      
+      console.log(`Failed to render product by ID: ${err}`);     
     }
   };
 

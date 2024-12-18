@@ -27,12 +27,8 @@ const Filters = () => {
   const getCategories = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/categories",
-        {
-          headers: {
-            Authorization: `${user.token}`,
-          }
-        }
+        // "http://localhost:3001/api/categories",
+        `${process.env.REACT_APP_API_URL}/api/categories`
       );
       const category = response.data.data.map((item) => item.name);
       setCategories(["all", ...category]);
@@ -42,9 +38,9 @@ const Filters = () => {
     }
   }
 
-  useEffect (() => (
+  useEffect (() => {
     getCategories()
-  ), [])
+  }, [])
   const colors = getUniqueValues(all_products, "colors");
   const companies = getUniqueValues(all_products, "company"); 
 
@@ -195,7 +191,7 @@ const Wrapper = styled.section`
     letter-spacing: var(--spacing);
   }
   .search-input:focus {
-    border-color: #732A2A; /* Change border color to red when focused */
+    border-color: #2CB8E3; /* Change border color to red when focused */
     outline: none; /* Remove the default outline */
   }
   }

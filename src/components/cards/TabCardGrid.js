@@ -13,15 +13,14 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useProductsContext } from "context/product_context";
-import {data} from '../../helpers/Data'
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
 const Header = tw(SectionHeading)``;
 const TabsControl = tw.div`flex flex-wrap bg-gray-200 px-2 py-2 rounded leading-none mt-12 xl:mt-0`;
 
-const ModalContent = tw.div`bg-white rounded-lg text-center`;
+const ModalContent = tw.div`bg-white rounded-lg text-center p-8`;
 const QuantityControl = tw.div`flex items-center justify-center space-x-4 mb-4`;
-const QuantityButton = tw(PrimaryButtonBase)`text-lg font-bold`;
+const QuantityButton = tw(PrimaryButtonBase)`text-lg font-bold px-4 py-1 bg-[#2CB6E2] hover:bg-[#2CB8E3]`;
 const QuantityDisplay = tw.div`text-lg font-bold`;
 
 const ModalContainer = tw.div`fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50`;
@@ -51,7 +50,7 @@ const Card = tw(
 
 const CardButton = tw(
   PrimaryButtonBase
-)`text-sm cursor-pointer absolute bottom-0 left-0 right-0 mx-auto`;
+)`text-sm cursor-pointer absolute bg-[#2CB6E2] hover:bg-[#FF699C] bottom-0 left-0 right-0 mx-auto`;
 const CardImageContainer = styled.div`
   ${(props) =>
     css`

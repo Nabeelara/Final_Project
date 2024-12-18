@@ -13,15 +13,14 @@ import { ReactComponent as PlayIcon } from "feather-icons/dist/icons/play-circle
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../images/dot-pattern.svg";
-import { px } from "framer-motion";
 
-const Container = tw.div`relative h-[600px] bg-cover bg-center bg-no-repeat mt-2`;
+const Container = tw.div`relative h-[700px] bg-cover bg-center bg-no-repeat`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
 const LeftColumn = tw.div`relative lg:w-6/12 lg:pr-12 flex-shrink-0 text-center lg:text-left`;
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
 
 const Heading = tw.h1`
-  font-black text-[#FF699C] text-3xl md:text-5xl leading-snug max-w-3xl`;
+  font-black text-[#FF699C] shadow-md text-3xl md:text-5xl leading-snug max-w-3xl`;
 
 const Paragraph = tw.p`my-5 lg:my-8 text-sm lg:text-base font-medium font-serif  text-white p-3 rounded-xl max-w-lg mx-auto lg:mx-0
 relative  bg-opacity-50`;
@@ -38,8 +37,6 @@ const WatchVideoButton = styled.button`
   }
 `;
 
-const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
-
 // Random Decorator Blobs (shapes that you see in background)
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
   ${tw`pointer-events-none opacity-5 absolute left-0 bottom-0 h-64 w-64 transform -translate-x-2/3  -z-10`}
@@ -53,7 +50,7 @@ const StyledModal = styled(ReactModalAdapter)`
     ${tw`fixed inset-0 z-50`}
   }
   &.mainHeroModal__content {
-    ${tw`xl:mx-auto m-4 sm:m-16 max-w-screen-xl absolute inset-0 flex justify-center items-center rounded-lg bg-gray-200 outline-none`}
+    ${tw`xl:mx-auto sm:m-16 max-w-screen-xl absolute inset-0 flex justify-center items-center rounded-lg bg-gray-200 outline-none`}
   }
   .content {
     ${tw`w-full lg:p-16`}
@@ -66,7 +63,6 @@ export default ({
   description="Our App super easy and fast.",
   primaryButtonText="Get Started",
   primaryButtonUrl="#",
-  watchVideoButtonText="Watch Video",
   watchVideoYoutubeUrl="https://youtu.be/hkdhN00en7w?si=cEiB-WBDQXdWsFA_",
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -80,7 +76,7 @@ export default ({
         backgroundSize: 'cover',
         backgroundPosition: 'center',
        }}>
-        <div className="absolute inset-0 bg-black opacity-10"></div> {/* Overlay */}
+        <div className="absolute inset-0 bg-black opacity-20"></div> {/* Overlay */}
         <TwoColumn>
           <LeftColumn>
             <Heading>{heading}</Heading>

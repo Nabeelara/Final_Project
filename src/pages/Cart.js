@@ -17,31 +17,35 @@ const Cart = () => {
   const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
   const {cartTotal, items, updateItemQuantity, removeItem, emptyCart} = useCart();
   const navigate = useNavigate();
-  console.log(items);
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const totalPrice = cartTotal 
-  console.log(totalPrice)
 
-  const handleUpdateQuantity = (id, newQuantity) => {
-    if (newQuantity > 0) {
-      updateItemQuantity(id,Math.max(1, Math.min(10, newQuantity)))
+  const handleUpdateQuantity = (id, newQuantity, maxQuantity) => {
+    if (newQuantity > maxQuantity) {
+      Swal.fire({
+        title: "Error",
+        text: `Quantity cannot axceed the maximum stock of ${maxQuantity}.`,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    } else if (newQuantity > 0) {
+      updateItemQuantity(id, newQuantity);
     } 
-    // Your code here
+  };
+
+  const calculateRemainingStock = (maxQuantity, currentQuantity) => {
+    return maxQuantity - currentQuantity;
   };
 
   const handleRemoveItem = (id) => {
     removeItem(id);
-    // Your code here
   };
 
   const handleEmptyCart = () => {
-    // Your code here
     emptyCart();
   };
 
   const calculateTotalPrice = () => {
-    // Your code here
     return formatPrice(cartTotal);
   };
 
@@ -62,9 +66,11 @@ const Cart = () => {
       }
 };
 
+console.log("item",items)
+
   return (
     <AnimationRevealPage>
-      <Header className="mb-8" />
+      <Header />
 
       <Container className=" flex flex-col justify-center items-center ">
         {items.length > 0 ? (
@@ -73,26 +79,27 @@ const Cart = () => {
               <div key={cartItem.id} className="flex items-center w-full border-b py-4">
                 <div className="flex items-center space-x-4 w-3/4">
                   <img
-                    src={cartItem.imageSrc}
+                    src={`https://lhxsdxtfgwcmsdsxohdi.supabase.co/storage/v1/object/public/images/${cartItem?.images[0]}`}
                     alt={cartItem.name}
                     className="w-[200px] h-[160px] object-cover"
                   />
                   <div>
                     <h3 className="text-lg font-semibold">{cartItem.name}</h3>
                     <p className="text-gray-600">{formatPrice(cartItem.price)}</p>
+                    <p className="text-gray-500">Remaining stock: {calculateRemainingStock}</p>
                   </div>
                 </div>
             
                 <div className="flex items-center space-x-4 w-1/4 justify-end">
                   <button
-                    onClick={() => handleUpdateQuantity(cartItem.id, cartItem.quantity - 1)}
+                    onClick={() => handleUpdateQuantity(cartItem.id, cartItem.quantity - 1, cartItem.maxQuantity)}
                     className="px-2 py-1 bg-gray-100 hover:bg-gray-300 rounded"
                   >
                     -
                   </button>
                   <span className="font-semibold">{cartItem.quantity}</span>
                   <button
-                    onClick={() => handleUpdateQuantity(cartItem.id, cartItem.quantity + 1, cartItem.stock)}
+                    onClick={() => handleUpdateQuantity(cartItem.id, cartItem.quantity + 1, cartItem.maxQuantity)}
                     className="px-2 py-1 bg-gray-100 hover:bg-gray-300 rounded"
                   >
                     +
@@ -116,7 +123,7 @@ const Cart = () => {
               </button>
               <button
                   onClick={renderCheckoutBtn}
-                  className="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded"
+                  className="px-6 py-2 bg-[#1893D0] hover:bg-[#2CB8E3] text-white rounded"
               >
                   {user ? "Checkout Items" : "Login to Checkout"}
               </button>

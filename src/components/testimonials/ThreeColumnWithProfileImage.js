@@ -13,9 +13,9 @@ const Subheading = tw(SubheadingBase)`text-center`;
 const Testimonials = tw.div`flex flex-col lg:flex-row items-center lg:items-stretch`;
 const TestimonialContainer = tw.div`mt-16 lg:w-1/3`;
 const Testimonial = tw.div`px-4 text-center max-w-xs mx-auto flex flex-col items-center`;
-const Image = tw.img`w-20 h-20 rounded-full`;
-const Quote = tw.blockquote`mt-5 text-gray-600 font-medium leading-loose`;
-const CustomerName = tw.p`mt-5 text-gray-900 font-semibold uppercase text-sm tracking-wide`;
+const Image = tw.img`w-24 h-24 rounded-full`;
+const Quote = tw.blockquote`mt-5 text-[#56D1F6] font-medium leading-loose`;
+const CustomerName = tw.p`mt-5 text-[#FF689B] font-semibold uppercase text-sm tracking-wide`;
 
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
   ${tw`pointer-events-none -z-20 absolute left-0 top-0 h-56 w-56 opacity-15 transform -translate-x-2/3 -translate-y-12 text-teal-400`}
@@ -32,19 +32,19 @@ export default ({
       imageSrc:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80",
       quote:
-        "I'm so glad I found this store! I bought an antique music box for my grandmother, and she loved it. A satisfying shopping experience; I will definitely come back!",
+        "This candy store has the best selection I’ve ever seen! The flavors are amazing, and I always find something new to try. It’s my happy place for sweet treats!",
       customerName: "Charlotte Hale"
     },
     {
       imageSrc: Customer2,
       quote:
-        "I found this store while searching for something special. The antique collection is amazing! I bought an antique clock, and the owner was very helpful. A satisfying experience; I'll definitely return!",
+        "This store brings back so many memories. The candies taste just like the ones I used to enjoy as a boy. It’s wonderful to share that joy with my grandkids now.",
       customerName: "Mr. George Thompson"
     },
     {
       imageSrc: Customer3,
       quote:
-        "I'm always on the hunt for unique antiques, and this store is fantastic! I found a beautiful vintage ring, and the service was friendly and helpful. It's now one of my favorite places to add to my collection!",
+        "I love visiting this store with my kids. The candies are delicious, and the staff is always so friendly. It reminds me of my own childhood!",
       customerName: "Lyyn Taylor"
     }
   ]
