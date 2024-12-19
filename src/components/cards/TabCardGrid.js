@@ -83,6 +83,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 export default ({ heading = "Buy Now" }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [flavour, setFlavour] = useState();
   const [quantity, setQuantity] = useState(1);
   const [tabsKeys, setTabsKeys] = useState([
     "Best Sellers",
@@ -107,6 +108,7 @@ export default ({ heading = "Buy Now" }) => {
   const openModal = (item) => {
     setSelectedItem(item);
     setQuantity(1);
+    setFlavour(item.flavour);
     setShowModal(true);
   };
 
@@ -224,6 +226,7 @@ export default ({ heading = "Buy Now" }) => {
               <h2 tw="text-2xl font-semibold mb-4">
                 Select Quantity for {selectedItem.name}
               </h2>
+              <p>Flavour: {flavour}</p>
               <QuantityControl>
                 <QuantityButton
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}

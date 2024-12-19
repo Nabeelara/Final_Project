@@ -33,13 +33,17 @@ const DetailProduct = () => {
   };
 
   const openModal = () => {
-    if (product) {
-      setSelectedItem(product); // Set item yang dipilih dari produk yang ditampilkan
-      setShowModal(true);
-    } else {
-      console.log("Product not found");
-    }
-  };
+  if (product) {
+    setSelectedItem({
+      ...product,
+      selectedFlavour: selectedColor, // Simpan warna yang dipilih
+      selectedFlavourId: selectedColorId, // Simpan ID flavour yang dipilih
+    });
+    setShowModal(true);
+  } else {
+    console.log("Product not found");
+  }
+};
   
 
   const navigate = useNavigate();
