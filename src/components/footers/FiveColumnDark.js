@@ -1,8 +1,6 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
-
 import LogoImage from "images/logo-light.svg";
 import { ReactComponent as FacebookIcon } from "images/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "images/twitter-icon.svg";
@@ -22,10 +20,10 @@ const LinkListItem = tw.li`mt-3`;
 const Link = tw.a`border-b-2 border-transparent hocus:text-gray-300 hocus:border-gray-100 pb-1 transition duration-300`;
 
 const LogoContainer = tw.div`flex items-center justify-center lg:justify-start`;
-const LogoImg = tw.img`w-8`;
+const LogoImg = tw.img`w-8 sm:w-4`;
 const LogoText = tw.h5`ml-2 text-xl font-black`;
 
-const CompanyAddress = tw.p`mt-4 max-w-xs font-medium text-sm mx-auto lg:mx-0 lg:mr-4 leading-loose text-center lg:text-left`;
+const CompanyAddress = tw.p`mt-4 max-w-xs font-medium text-lg lg:mx-0 lg:mr-4 leading-loose text-center lg:text-left`;
 
 const SocialLinksContainer = tw.div`mt-4 text-center lg:text-left`;
 const SocialLink = styled.a`
@@ -35,7 +33,7 @@ const SocialLink = styled.a`
   }
 `;
 
-const CopyrightAndCompanyInfoRow = tw.div`pb-0 text-sm font-normal flex flex-col sm:flex-row justify-between items-center`
+const CopyrightAndCompanyInfoRow = tw.div`pb-0 text-sm font-normal flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4`; // Menambahkan gap agar rapi di layar kecil
 const CopyrightNotice = tw.div``
 const CompanyInfo = tw.div``
 

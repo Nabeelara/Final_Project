@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
+import { css } from "styled-components/macro"; 
 import { IoCart } from "react-icons/io5";
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
@@ -16,7 +16,7 @@ import { useAuth } from "context/AuthProvider.js";
 /* header */
 const Header = tw.header`
   flex justify-between items-center relative
-  w-screen bg-[#F8C3D7] px-16  
+  w-screen bg-[#F8C3D7] lg:px-16 px-8  
 `;
 
 
@@ -38,7 +38,7 @@ export const LogoLink = styled(NavLink)`
   ${tw`flex items-center border-b-0 text-white text-2xl! ml-0!`};
 
   img {
-    ${tw`w-48 h-32 mr-3 p-5`}
+    ${tw`w-auto lg:h-32 h-20 mr-3 lg:p-5 p-3`}
   }
 `;
 

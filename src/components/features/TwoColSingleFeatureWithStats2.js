@@ -7,11 +7,11 @@ import AntiqueShop from "images/oldpink.webp"
 import { ReactComponent as SvgDotPattern } from "images/dot-pattern.svg";
 
 const Container = tw.div`relative`;
-const TwoColumn = tw.div`flex flex-col md:flex-row justify-between h-screen sm:h-auto bg-blue-100 px-20 py-20 md:py-24`;
+const TwoColumn = tw.div`flex flex-col lg:flex-row justify-between lg:h-auto bg-blue-100 lg:px-20 lg:py-20 py-6 md:py-24`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
 const ImageColumn = tw(Column)`md:w-5/12 flex-shrink-0 h-80 md:h-auto relative `;
 const TextColumn = styled(Column)(props => [
-  tw`md:w-7/12 mt-16 md:mt-0`,
+  tw`md:w-7/12 lg:mt-16 md:mt-0`,
   props.textOnLeft ? tw`md:mr-12 lg:mr-16 md:order-first` : tw`md:ml-12 lg:ml-16 md:order-last`
 ]);
 
@@ -23,7 +23,7 @@ const TextContent = tw.div`lg:py-8 text-center md:text-left`;
 
 const Heading = tw(
   SectionHeading
-)` font-black text-left text-[#FF689B] text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
+)` font-black text-left text-[#FF689B] lg:text-5xl text-center md:text-left leading-tight`;
 const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-serif font-medium leading-relaxed text-secondary-100`;
 
 const PrimaryButton = tw(PrimaryButtonBase)`mt-8 md:mt-10 text-sm inline-block mx-auto md:mx-0 bg-[#FF689B] hover:bg-[#B7534E]`;

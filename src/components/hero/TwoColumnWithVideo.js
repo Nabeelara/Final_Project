@@ -3,21 +3,17 @@ import styled from "styled-components";
 import tw from "twin.macro";
 //eslint-disable-next-line
 import { css } from "styled-components/macro";
-
 import Header from "../headers/light.js";
-
 import ReactModalAdapter from "../../helpers/ReactModalAdapter.js";
 import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
-
 import { ReactComponent as PlayIcon } from "feather-icons/dist/icons/play-circle.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../images/dot-pattern.svg";
 
-const Container = tw.div`relative h-[700px] bg-cover bg-center bg-no-repeat`;
+const Container = tw.div`relative lg:h-[700px] bg-cover bg-center bg-no-repeat`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
 const LeftColumn = tw.div`relative lg:w-6/12 lg:pr-12 flex-shrink-0 text-center lg:text-left`;
-const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
 
 const Heading = tw.h1`
   font-black text-[#FF699C] shadow-md text-3xl md:text-5xl leading-snug max-w-3xl`;
@@ -56,14 +52,11 @@ const StyledModal = styled(ReactModalAdapter)`
     ${tw`w-full lg:p-16`}
   }
 `;
-const CloseModalButton = tw.button`absolute top-0 right-0 mt-8 mr-8 hocus:text-pink-500`;
-
 export default ({
   heading = "My React App",
   description="Our App super easy and fast.",
   primaryButtonText="Get Started",
   primaryButtonUrl="#",
-  watchVideoYoutubeUrl="https://youtu.be/hkdhN00en7w?si=cEiB-WBDQXdWsFA_",
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -73,7 +66,7 @@ export default ({
     <>
       <Header />
       <Container style={{ backgroundImage: `url("https://i.pinimg.com/736x/4d/ec/8e/4dec8ee196667eee802ced6e9cd76ed8.jpg")`,
-        backgroundSize: 'cover',
+        backgroundSize: 'lg:cover h-screen',
         backgroundPosition: 'center',
        }}>
         <div className="absolute inset-0 bg-black opacity-20"></div> {/* Overlay */}
@@ -87,20 +80,6 @@ export default ({
           </LeftColumn>
         </TwoColumn>
         <DecoratorBlob1 />
-        <StyledModal
-          closeTimeoutMS={300}
-          className="mainHeroModal"
-          isOpen={modalIsOpen}
-          onRequestClose={toggleModal}
-          shouldCloseOnOverlayClick={true}
-        >
-          <CloseModalButton onClick={toggleModal}>
-            <CloseIcon tw="w-6 h-6" />
-          </CloseModalButton>
-          <div className="content">
-            <ResponsiveVideoEmbed url={watchVideoYoutubeUrl} tw="w-full" />
-          </div>
-        </StyledModal>
       </Container>
     </>
   );

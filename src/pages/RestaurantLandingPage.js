@@ -25,8 +25,8 @@ const HighlightedTextInverse = tw.span`
 `;
 
 const Description = tw.span`
-inline-block mt-8 ml-8 text-gray-700 text-lg leading-relaxed 
-tracking-wide sm:ml-16 sm:text-xl sm:leading-loose
+inline-block mt-8 mx-8 text-gray-700 lg:text-lg leading-relaxed 
+tracking-wide leading-loose
 `;
 
   const description="Explore Our Sweet Selection, from fruity gummies to creamy chocolates, our collection is crafted to bring happiness in every bite. Indulge in our unique creations, perfect for gifts, celebrations, or a treat just for you!"
@@ -48,7 +48,7 @@ tracking-wide sm:ml-16 sm:text-xl sm:leading-loose
     <span
       style={{
         textShadow: "2px 2px 4px rgba(0.5, 0.5, 0.5, 0.7)",
-        fontSize: "1.1rem",
+        fontSize: "lg:1.1rem",
         lineHeight: "1.8rem",
       }}
     >

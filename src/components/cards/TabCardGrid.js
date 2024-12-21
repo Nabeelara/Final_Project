@@ -16,7 +16,7 @@ import { useProductsContext } from "context/product_context";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
 const Header = tw(SectionHeading)``;
-const TabsControl = tw.div`flex flex-wrap bg-gray-200 px-2 py-2 rounded leading-none mt-12 xl:mt-0`;
+const TabsControl = tw.div`flex bg-gray-200 px-2 py-2 rounded leading-none lg:mt-12 mt-4 xl:mt-0`;
 
 const ModalContent = tw.div`bg-white rounded-lg text-center p-8`;
 const QuantityControl = tw.div`flex items-center justify-center space-x-4 mb-4`;
