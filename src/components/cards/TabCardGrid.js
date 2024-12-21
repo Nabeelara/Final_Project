@@ -9,12 +9,12 @@ import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
 import { useCart } from "react-use-cart";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useProductsContext } from "context/product_context";
 
-const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
+const HeaderRow = tw.div`flex justify-between items-center flex-col lg:flex-row`;
 const Header = tw(SectionHeading)``;
 const TabsControl = tw.div`flex bg-gray-200 px-2 py-2 rounded leading-none lg:mt-12 mt-4 xl:mt-0`;
 
@@ -163,15 +163,21 @@ export default ({ heading = "Buy Now" }) => {
         <HeaderRow>
           <Header>{heading}</Header>
           <TabsControl>
-            {Object.keys(tabs).map((tabName, index) => (
-              <TabControl
-                key={index}
-                active={activeTab === tabName}
-                onClick={() => setActiveTab(tabName)}
-              >
-                {tabName}
-              </TabControl>
-            ))}
+          {/* Kolom tambahan */}
+          {Object.keys(tabs).map((tabName, index) => (
+            <button
+              key={index}
+              className={`${
+                activeTab === tabName ? "bg-blue-500 text-white" : "bg-gray-200"
+              } px-4 py-2 rounded`}
+              onClick={() => {
+                setActiveTab(tabName);
+                Navigate(`/detail-product/${tabName}`); // Gunakan tabName langsung
+              }}
+            >
+              {tabName}
+            </button>
+          ))}
           </TabsControl>
         </HeaderRow>
 
