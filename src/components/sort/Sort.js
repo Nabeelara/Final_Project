@@ -37,22 +37,22 @@ const Sort = () => {
           </span>
         </button>
       </div>
-      <p>{filtered_products.length} Product Founds</p>
+      <p className="text-sm">{filtered_products.length} Product Founds</p>
       <hr />
-      <form>
-        <label for="product" className="text-lg">
+      <form className="gap-2">
+        <label for="product" className="text-sm">
           Sort By
         </label>
         <select
           name="product"
           id="product"
-          className="text-lg"
+          className="text-sm"
           onChange={updateSort}
         >
-          <option value="price-lowest">Price (Lowest)</option>
-          <option value="price-highest">Price (Highest)</option>
-          <option value="name-a">Name (A - Z)</option>
-          <option value="name-z">Name (Z - A)</option>
+          <option value="price-lowest" className="text-sm">Price (Lowest)</option>
+          <option value="price-highest" className="text-sm">Price (Highest)</option>
+          <option value="name-a" className="text-sm">Name (A - Z)</option>
+          <option value="name-z" className="text-sm">Name (Z - A)</option>
         </select>
         {/** add the label and dropdown select
          *   use this value :

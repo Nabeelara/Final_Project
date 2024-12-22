@@ -44,13 +44,13 @@ p {
 }
 
 .btn-container .active {
-    background: #D69D2E;
+    background: #F54376;
     color: white;
     border-radius: 4px;
   }
 
 .btn-container :hover {
-    background-color: #74411080;
+    background-color: #F8C3D7;
     color: white;
     border-radius: 4px;
 }

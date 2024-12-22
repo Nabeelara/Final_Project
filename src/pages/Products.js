@@ -8,18 +8,18 @@ import Sort from "components/sort/Sort";
 import Filters from "components/Filters";
 
 export const Products = () => {
-  const Container = tw.div`relative bg-yellow-100 text-gray-700 -mb-8 -mx-8 px-4 py-8 lg:py-12`;
-  const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
+  const Container = tw.div`relative bg-yellow-100 text-gray-700 -mb-8 -mx-8 px-4 lg:py-12`;
+  const Content = tw.div`lg:max-w-screen-xl w-screen px-4 mx-auto relative z-10`;
   return (
     <AnimationRevealPage>
-      <Header className="mb-8" />
+      <Header />
 
       <Container>
         <Content>
           <main>
             <div className="section-center products pb-[90px] flex gap-12">
-              <Filters />
-              <div className="">
+              <Filters className="w-[20%] md:w-auto"/>
+              <div className="w-[80%] md:w-auto">
                 <Sort />
                 <ProductList />
               </div>
