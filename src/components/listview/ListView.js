@@ -30,9 +30,9 @@ const ListView = ({ products }) => {
         <article key={item.id} className="flex pb-10 ">
           <img src={`https://lhxsdxtfgwcmsdsxohdi.supabase.co/storage/v1/object/public/images/${item.images[0]}`} className="w-[250px] h-[150px]" alt=""></img>
           <div className="my-auto ml-10">
-            <p className="text-2xl font-bold text-[#102a42]">{item.name}</p>
-            <p className="text-[#b99179]">{formatPrice(item.price)}</p>
-            <p className="mt-2 mb-3 text-[#102a42]">{item.description}</p>
+            <p className="text-sm md:text-lg font-bold text-[#102a42]">{item.name}</p>
+            <p className="text-sm md:text-lg text-[#b99179]">{formatPrice(item.price)}</p>
+            <p className="text-sm md:text-lg mt-2 mb-3 text-[#102a42]">{item.description}</p>
             <Link
               to={`/detail-product/${item.id}`}
               className="bg-[#676767] text-white text-[10px] py-1 px-2 rounded"

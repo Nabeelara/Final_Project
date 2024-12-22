@@ -22,7 +22,7 @@ const GridView = ({ products }) => {
 
   return (
     <>
-      <div className="products-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="products-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-sm md:text-lg">
         {displayedProducts.map((item) => {
           return (
             <Product
