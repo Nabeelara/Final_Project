@@ -15,7 +15,6 @@ const Filters = () => {
       min_price,
       price,
       max_price,
-      shipping,
     },
     updateFilters,
     all_products,
@@ -62,7 +61,7 @@ const Filters = () => {
           </div>
           {/* end of search input */}
           {/* category */}
-          <div className="form-control justify-start">
+          <div className="form-control justify-start text-sm md:text-lg">
             <h5 className="font-bold">Category</h5>
             <div>
               {categories &&

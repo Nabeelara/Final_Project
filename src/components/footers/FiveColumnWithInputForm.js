@@ -51,7 +51,7 @@ const SocialLink = styled.a`
 export default ({ background }) => {
   return (
     <div
-      className={`relative ${background} text-gray-700 -mb-8 -mx-8 px-8 py-20 lg:py-24`}
+      className={`relative ${background} text-sm md:text-base lg:text-lg text-gray-700 -mb-8 -mx-8 px-8 py-20 lg:py-24`}
     >
       <Content>
       <SixColumns>

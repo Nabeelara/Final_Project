@@ -12,19 +12,19 @@ const ThreeColumnContainer = styled.div`
   ${tw`flex flex-col items-center md:items-stretch md:flex-row flex-wrap md:justify-center max-w-screen-lg mx-auto py-20 md:py-24`}
 `;
 const Subheading = tw(SubheadingBase)`mb-4 text-center text-pink-400`;
-const Heading = tw(SectionHeading)`w-full text-center text-4xl font-bold text-[#ff4081]`;
-const Description = tw(SectionDescription)`w-full text-center text-lg text-gray-600`;
+const Heading = tw(SectionHeading)`w-full text-center text-3xl lg:text-4xl font-bold text-[#ff4081]`;
+const Description = tw(SectionDescription)`w-full text-center lg:text-lg text-gray-600`;
 
 const VerticalSpacer = tw.div`mt-10 w-full`;
 
 const Column = styled.div`
-  ${tw`md:w-1/2 lg:w-1/3 max-w-sm`}
+  ${tw`md:w-1/2 lg:w-1/3 `}
 `;
 
 const Card = styled.div`
-  ${tw`flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left h-full mx-4 px-6 py-8 rounded-lg bg-gradient-to-r from-pink-100 via-yellow-200 to-pink-200 shadow-xl`}
+  ${tw`grid grid-cols-1  md:items-center items-start text-left h-full m-4 px-6 py-8  rounded-lg bg-gradient-to-r from-pink-100 via-yellow-200 to-pink-200 shadow-xl`}
   .imageContainer {
-    ${tw`border-2 border-yellow-300 text-center rounded-full p-5 flex-shrink-0`}
+    ${tw`border-2 border-yellow-300 text-center rounded-full p-5`}
     img {
       ${tw`w-16 h-16`}
     }
@@ -35,7 +35,7 @@ const Card = styled.div`
   }
 
   .title {
-    ${tw`mt-4 tracking-wide font-bold text-3xl leading-none text-pink-500`}
+    ${tw`mt-4 tracking-wide font-bold md:text-3xl leading-none text-pink-500`}
   }
 
   .description {
