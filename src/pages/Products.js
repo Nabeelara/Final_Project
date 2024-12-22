@@ -13,11 +13,10 @@ export const Products = () => {
   return (
     <AnimationRevealPage>
       <Header />
-
-      <Container>
+      <Container className="pt-4">
         <Content>
           <main>
-            <div className="section-center products pb-[90px] flex gap-12">
+            <div className="section-center products pb-[90px] flex md:gap-12">
               <Filters className="w-[20%] md:w-auto"/>
               <div className="w-[80%] md:w-auto">
                 <Sort />

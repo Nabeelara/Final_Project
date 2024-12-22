@@ -155,18 +155,6 @@ const Filters = () => {
             />
           </div>
           {/* end of price */}
-          {/* shipping */}
-          <div className="form-control shipping">
-            <label htmlFor="shipping">free shipping</label>
-            <input
-              type="checkbox"
-              name="shipping"
-              id="shipping"
-              checked={shipping}
-              onChange={updateFilters}
-            />
-          </div>
-          {/* end of  shipping */}
         </form>
         <button type="button" className="clear-btn" onClick={clearFilters}>
           clear filters
@@ -178,23 +166,76 @@ const Filters = () => {
 
 const Wrapper = styled.section`
   .form-control {
-    margin-bottom: 1.25rem;
-    h5 {
-      margin-bottom: 0.5rem;
-    }
+  margin-bottom: 1.25rem; /* Default margin bawah */
+
+  h5 {
+    margin-bottom: 0.5rem; /* Margin bawah untuk elemen <h5> */
   }
+
+  /* Atur lebar default */
+  width: 100%; 
+  max-width: 600px; /* Batas maksimum lebar untuk layar besar */
+}
+
+/* Responsivitas untuk layar lebih kecil */
+@media (max-width: 768px) {
+  .form-control {
+    margin-bottom: 1rem; /* Kurangi margin bawah */
+    width: 90%; /* Lebar dikurangi menjadi 90% dari kontainer */
+    max-width: 500px; /* Kurangi batas maksimum lebar */
+  }
+
+  .form-control h5 {
+    margin-bottom: 0.4rem; /* Kurangi margin bawah untuk <h5> */
+  }
+}
+
+/* Responsivitas untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .form-control {
+    margin-bottom: 0.75rem; /* Margin bawah lebih kecil */
+    width: 80%; /* Lebar dikurangi menjadi 80% dari kontainer */
+    max-width: 300px; /* Kurangi batas maksimum lebar lebih jauh */
+  }
+
+  .form-control h5 {
+    margin-bottom: 0.3rem; /* Margin bawah lebih kecil untuk <h5> */
+  }
+}
+
+.search-input {
+  padding: 0.5rem;
+  background: white;
+  border-radius: 10px;
+  border: 2px solid pink;
+  letter-spacing: var(--spacing);
+  font-size: 1rem;
+  width: 100%; /* Default width untuk fleksibilitas */
+  max-width: 400px; /* Batas maksimum lebar */
+}
+
+/* Gaya saat input difokuskan */
+.search-input:focus {
+  border-color: #f14376; /* Ubah warna border saat fokus */
+  outline: none; /* Hapus outline default */
+}
+
+/* Responsivitas untuk layar lebih kecil */
+@media (max-width: 768px) {
   .search-input {
-    padding: 0.5rem;
-    background: white;
-    border-radius: 10px;
-    border: 2px solid grey;
-    letter-spacing: var(--spacing);
+    width: 90%; /* Kurangi lebar menjadi 90% dari kontainer */
+    max-width: 300px; /* Batasi lebar maksimum */
   }
-  .search-input:focus {
-    border-color: #2CB8E3; /* Change border color to red when focused */
-    outline: none; /* Remove the default outline */
+}
+
+/* Responsivitas untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .search-input {
+    width: 80%; /* Kurangi lebar menjadi 80% dari kontainer */
+    max-width: 250px; /* Batasi lebar maksimum */
   }
-  }
+}
+
   .search-input::placeholder {
     text-transform: capitalize;
   }
@@ -268,18 +309,89 @@ const Wrapper = styled.section`
   }
   .clear-btn {
     background: var(--clr-red-dark);
-    color: var(--clr-white);
+    color: white;
+    border-radius: 8px;
+    background: #F8C3D7;
     padding: 0.25rem 0.5rem;
-    border-radius: var(--radius);
     width: 125px;
     height: 30px;
+    &:hover {
+      background: #E94A78;
+    }
   }
+  
   @media (min-width: 768px) {
     .content {
       position: sticky;
       top: 1rem;
     }
   }
+
+  /* Atur gaya slider utama */
+input[type="range"] {
+  -webkit-appearance: none; /* Hilangkan gaya default di WebKit */
+  width: 100%; /* Sesuaikan lebar */
+  height: 6px; /* Ketebalan track */
+  background: #ddd; /* Warna track */
+  border-radius: 5px; /* Membuat track melengkung */
+  outline: none; /* Hilangkan border default */
+  transition: background 0.3s ease-in-out;
+}
+
+/* Ganti warna track ketika di-hover atau aktif */
+input[type="range"]:hover {
+  background: #ccc; /* Warna ketika slider di-hover */
+}
+
+/* Gaya untuk thumb (tombol geser) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Hilangkan gaya default */
+  appearance: none; /* Untuk browser modern */
+  width: 16px; /* Ukuran thumb */
+  height: 16px;
+  background: #2cb8e3; /* Warna thumb */
+  border-radius: 50%; /* Thumb berbentuk lingkaran */
+  cursor: pointer; /* Pointer berubah menjadi tangan */
+  transition: background 0.3s ease-in-out;
+}
+
+/* Ganti warna thumb saat di-hover */
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #1a8fb7; /* Warna thumb ketika di-hover */
+}
+
+/* Style untuk Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #2cb8e3;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Style untuk track Firefox */
+input[type="range"]::-moz-range-track {
+  background: #ddd;
+  border-radius: 5px;
+  height: 6px;
+}
+
+/* IE & Edge */
+input[type="range"]::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background: #2cb8e3;
+  border-radius: 50%;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 6px 0;
+  color: transparent;
+}
+
 `;
 
 export default Filters;

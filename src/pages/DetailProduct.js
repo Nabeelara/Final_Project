@@ -171,7 +171,7 @@ const DetailProduct = () => {
   };
 
   const handleQuantityChange = (newQuantity) => {
-    setQuantity(Math.max(1, Math.min(maxQuantity, newQuantity))); // Ensure quantity is within the allowed range
+    setQuantity(Math.max(1, Math.min(maxQuantity, newQuantity))); // Ensure quantity is within the allowed 
   };
   
   // useEffect(() => {
