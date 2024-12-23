@@ -13,7 +13,7 @@ const Cart = () => {
   // Panggil fungsi dan state yang diperlukan dari useCart
   // const { cartTotal } 
 
-  const Container = tw.div`relative bg-gray-200 text-gray-700 px-12 py-8 lg:py-12`;
+  const Container = tw.div`relative bg-gray-200 text-gray-700 px-4 md:px-12 py-8 lg:py-12`;
   const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
   const {cartTotal, items, updateItemQuantity, removeItem, emptyCart} = useCart();
   const navigate = useNavigate();
@@ -75,7 +75,8 @@ console.log("item",items)
       <Container className=" flex flex-col justify-center items-center ">
         {items.length > 0 ? (
           <>
-            {items.map((cartItem) => (
+            <div className="flex md:flex-row flex-col">
+              {items.map((cartItem) => (
               <div key={cartItem.id} className="flex items-center w-full border-b py-4">
                 <div className="flex items-center space-x-4 w-3/4">
                   <img
@@ -113,8 +114,9 @@ console.log("item",items)
                 </div>
               </div>
             ))}
+            </div>
 
-            <div className="flex justify-between items-center w-full mt-8">
+            <div className="flex justify-between text-sm md:text-base lg:text-lg items-center w-full mt-8">
               <button
                 onClick={handleEmptyCart}
                 className="px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded"
