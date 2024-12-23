@@ -25,8 +25,8 @@ const HighlightedTextInverse = tw.span`
 `;
 
 const Description = tw.span`
-inline-block mt-8 mx-8 text-gray-700 lg:text-lg leading-relaxed 
-tracking-wide leading-loose
+inline-block my-8 mx-4 md:mx-8 text-gray-700 text-sm lg:text-lg leading-relaxed 
+tracking-wide leading-loose 
 `;
 
   const description="Explore Our Sweet Selection, from fruity gummies to creamy chocolates, our collection is crafted to bring happiness in every bite. Indulge in our unique creations, perfect for gifts, celebrations, or a treat just for you!"

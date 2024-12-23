@@ -8,11 +8,11 @@ import {ReactComponent as SvgDotPattern } from "images/dot-pattern.svg"
 import promo from "images/promo.jpg"
 
 const Container = tw.div`relative`;
-const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24 items-center`;
+const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto md:py-12 items-center`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
 const ImageColumn = tw(Column)`md:w-6/12 flex-shrink-0 relative`;
 const TextColumn = styled(Column)(props => [
-  tw`md:w-6/12 mt-16 md:mt-0`,
+  tw`md:w-6/12 mt-4 md:mt-0`,
   props.textOnLeft ? tw`md:mr-12 lg:mr-16 md:order-first` : tw`md:ml-12 lg:ml-16 md:order-last`
 ]);
 
@@ -62,7 +62,7 @@ export default ({
   // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
 
   return (
-    <Container className="md:mx-8">
+    <Container className="md:mx-8 mb-12">
       <TwoColumn>
         <ImageColumn>
           <Image css={imageCss} src={imageSrc} imageBorder={imageBorder} imageShadow={imageShadow} imageRounded={imageRounded}/>

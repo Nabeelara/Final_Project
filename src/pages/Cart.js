@@ -81,16 +81,16 @@ console.log("item",items)
                   <img
                     src={`https://lhxsdxtfgwcmsdsxohdi.supabase.co/storage/v1/object/public/images/${cartItem?.images[0]}`}
                     alt={cartItem.name}
-                    className="w-[200px] h-[160px] object-cover"
+                    className="w-[100px] h-[80px] md:w-[200px] md:h-[160px] object-cover"
                   />
                   <div>
-                    <h3 className="text-lg font-semibold">{cartItem.name}</h3>
+                    <h3 className="md:text-lg font-semibold">{cartItem.name}</h3>
                     <p className="text-gray-600">{formatPrice(cartItem.price)}</p>
                     <p className="text-gray-500">Remaining stock: {calculateRemainingStock}</p>
                   </div>
                 </div>
             
-                <div className="flex items-center space-x-4 w-1/4 justify-end">
+                <div className="flex items-center text-sm md:text-base space-x-4 w-1/4 justify-end">
                   <button
                     onClick={() => handleUpdateQuantity(cartItem.id, cartItem.quantity - 1, cartItem.maxQuantity)}
                     className="px-2 py-1 bg-gray-100 hover:bg-gray-300 rounded"
@@ -129,7 +129,7 @@ console.log("item",items)
               </button>
             </div>
             <div>
-              <h2 className="text-xl font-semibold">Total Price: {calculateTotalPrice()}</h2>
+              <h2 className="text-lg md:text-xl font-semibold">Total Price: {calculateTotalPrice()}</h2>
             </div>
           </>
          ) : (
