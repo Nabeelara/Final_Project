@@ -77,8 +77,6 @@ tracking-wide leading-loose
 
       <Testimonial/>
 
-      <Features/>
-
       <DownloadApp
         text={
           <>
@@ -87,6 +85,9 @@ tracking-wide leading-loose
           </>
         }
       />
+
+      <Features/>
+
       <Footer background={"bg-gray-200"} />
     </AnimationRevealPage>
   );

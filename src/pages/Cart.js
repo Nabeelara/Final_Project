@@ -13,7 +13,7 @@ const Cart = () => {
   // Panggil fungsi dan state yang diperlukan dari useCart
   // const { cartTotal } 
 
-  const Container = tw.div`relative bg-gray-200 text-gray-700 px-4 md:px-12 py-8 lg:py-12`;
+  const Container = tw.div`relative bg-gray-200 text-gray-700 px-4 lg:px-12 py-8 lg:py-12`;
   const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
   const {cartTotal, items, updateItemQuantity, removeItem, emptyCart} = useCart();
   const navigate = useNavigate();
@@ -131,7 +131,7 @@ console.log("item",items)
               </button>
             </div>
             <div>
-              <h2 className="text-lg md:text-xl font-semibold">Total Price: {calculateTotalPrice()}</h2>
+              <h2 className="text-lg md:text-xl mt-4 lg:mt-0 font-semibold">Total Price: {calculateTotalPrice()}</h2>
             </div>
           </>
          ) : (

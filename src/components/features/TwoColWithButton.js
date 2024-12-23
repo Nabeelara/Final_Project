@@ -8,7 +8,7 @@ import {ReactComponent as SvgDotPattern } from "images/dot-pattern.svg"
 import promo from "images/promo.jpg"
 
 const Container = tw.div`relative`;
-const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto md:py-12 items-center`;
+const TwoColumn = tw.div`flex flex-col lg:flex-row justify-between max-w-screen-xl mx-auto md:py-12 items-center`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
 const ImageColumn = tw(Column)`md:w-6/12 flex-shrink-0 relative`;
 const TextColumn = styled(Column)(props => [

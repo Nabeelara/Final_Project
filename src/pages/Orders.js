@@ -10,7 +10,7 @@ import { formatPrice } from "helpers/helpers";
 const Orders = () => {
   const Container = tw.div`relative bg-gray-100 text-gray-700 -mb-8 -mx-8 px-4 py-8 lg:py-12`;
   const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
-  const Card = tw.div`bg-white shadow-lg rounded-lg p-6 mb-6 flex flex-col md:flex-row items-center md:items-start`;
+  const Card = tw.div`bg-white shadow-lg rounded-lg p-6 mx-4 mb-6 flex flex-col md:flex-row items-center md:items-start`;
   const Image = tw.img`w-40 h-32 rounded-lg shadow-md object-cover mb-4 md:mb-0 md:mr-6`;
   const Info = tw.div`flex-1 text-gray-800`;
   const Title = tw.h3`md:text-lg font-semibold mb-2`;

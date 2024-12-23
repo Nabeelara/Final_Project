@@ -1,13 +1,13 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
+import { SectionHeading } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import AntiqueShop from "images/oldpink.webp"
 import { ReactComponent as SvgDotPattern } from "images/dot-pattern.svg";
 
 const Container = tw.div`relative`;
-const TwoColumn = tw.div`flex flex-col lg:flex-row justify-between lg:h-auto bg-blue-100 lg:px-20 lg:py-20 py-6 md:py-24`;
+const TwoColumn = tw.div`flex flex-col  lg:flex-row justify-between lg:h-auto bg-blue-100 lg:px-20 lg:py-20 py-6 md:py-16`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
 const ImageColumn = tw(Column)`md:w-5/12 flex-shrink-0 h-80 md:h-auto relative `;
 const TextColumn = styled(Column)(props => [

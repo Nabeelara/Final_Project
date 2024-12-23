@@ -10,7 +10,7 @@ import Customer2 from "images/Customer2.jpg"
 import Customer3 from "images/Customer3.jpeg"
 
 const Subheading = tw(SubheadingBase)`text-center`;
-const Testimonials = tw.div`flex flex-col lg:flex-row items-center lg:items-stretch`;
+const Testimonials = tw.div`flex flex-col md:flex-row items-center lg:items-stretch`;
 const TestimonialContainer = tw.div`mt-16 lg:w-1/3`;
 const Testimonial = tw.div`px-4 text-center max-w-xs mx-auto flex flex-col items-center`;
 const Image = tw.img`w-24 h-24 rounded-full`;
