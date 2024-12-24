@@ -9,10 +9,11 @@ import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
 import { useCart } from "react-use-cart";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, Route } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useProductsContext } from "context/product_context";
+import DetailProduct from "pages/DetailProduct";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col lg:flex-row`;
 const Header = tw(SectionHeading)``;
@@ -216,6 +217,10 @@ export default ({ heading = "Buy Now" }) => {
                   </Link>
                   <CardButton onClick={() => openModal(card)}>
                     Buy Now
+                    <Route
+                      path="/detail-product/:id"
+                      element={<DetailProduct />}
+                    />
                   </CardButton>
                 </Card>
               </CardContainer>
