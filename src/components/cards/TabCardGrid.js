@@ -215,16 +215,16 @@ export default ({ heading = "Buy Now" }) => {
                       className="flex items-center justify-center"
                     />
                   </Link>
-                  <CardButton onClick={() => openModal(card)}>
-                    Buy Now
-                    <Route
-                      path="/detail-product/:id"
-                      element={<DetailProduct />}
-                    />
-                  </CardButton>
+                  <Link to={`/detail-product/${card.id}`}>
+                    <CardButton onClick={() => openModal(card)}>
+                      Buy Now
+                    
+                    </CardButton>
+                  </Link>
                 </Card>
               </CardContainer>
             ))}
+            
           </TabContent>
         ))}
       </ContentWithPaddingXl>
