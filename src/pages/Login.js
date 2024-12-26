@@ -114,10 +114,19 @@ const LoginPage = () => {
                     Forgot Password ?
                   </a>
                 </p>
+                {/* Sign Up */}
+                <p className="mt-8 text-sm text-gray-600 text-center lg:hidden">
+                  Don’t have an account?{" "}
+                  <a
+                    href={signupUrl}
+                    className="border-b border-pink-400 border-dotted"
+                  >
+                    Sign Up
+                  </a>
+                </p>
               </div>
             </div>
           </div>
-          
           <div className="sm:rounded-r-lg flex bg-yellow-100 text-center hidden lg:flex justify-center px-20">
             <a href={logoLinkUrl}>
               <img src={logo} className="h-auto mx-auto mt-40" alt="Candy Logo" />
