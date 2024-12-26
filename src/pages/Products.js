@@ -9,7 +9,7 @@ import Filters from "components/Filters";
 
 export const Products = () => {
   const Container = tw.div`relative bg-yellow-100 text-gray-700 -mb-8 -mx-8 px-4 lg:py-12`;
-  const Content = tw.div`lg:max-w-screen-xl w-screen px-4 mx-auto relative z-10`;
+  const Content = tw.div`w-screen px-4 mx-auto relative z-10`;
   return (
     <AnimationRevealPage>
       <Header />
