@@ -77,7 +77,7 @@ console.log("item",items)
           <>
             <div className="flex md:flex-row flex-col">
               {items.map((cartItem) => (
-              <div key={cartItem.id} className="flex items-center w-full border-b py-4">
+              <div key={cartItem.id} className="flex items-center w-full border-b py-4 md:justify-between">
                 <div className="flex items-center space-x-4 w-3/4">
                   <img
                     src={`https://lhxsdxtfgwcmsdsxohdi.supabase.co/storage/v1/object/public/images/${cartItem?.images[0]}`}

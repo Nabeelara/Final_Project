@@ -14,7 +14,7 @@ const Testimonials = tw.div`flex flex-col md:flex-row items-center lg:items-stre
 const TestimonialContainer = tw.div`mt-16 lg:w-1/3`;
 const Testimonial = tw.div`px-4 text-center max-w-xs mx-auto flex flex-col items-center`;
 const Image = tw.img`w-24 h-24 rounded-full`;
-const Quote = tw.blockquote`mt-5 text-[#56D1F6] font-medium leading-loose`;
+const Quote = tw.blockquote`mt-5 text-[#56D1F6] text-sm md:text-base md:font-medium md:leading-loose`;
 const CustomerName = tw.p`mt-5 text-[#FF689B] font-semibold uppercase text-sm tracking-wide`;
 
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`

@@ -35,7 +35,7 @@ const DecoratorBlob1 = tw(SvgDecoratorBlob1)`absolute bottom-0 left-0 w-80 h-80 
 const DecoratorBlob2 = tw(SvgDecoratorBlob1)`absolute top-0 right-0 w-80 h-80 transform  translate-x-20 -translate-y-64 text-pink-300 opacity-50`
 
 export default ({
-  subheading = "Unduh Aplikasi",
+  subheading = "Download App",
   text = "Semua orang menyukai toko permen ini! Temukan berbagai rasa favorit Anda.",
   link1Text = "App Store",
   link1Url = "http://apple.com",
