@@ -5,7 +5,7 @@ import Footer from "../components/footers/FiveColumnWithInputForm.js";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import tw from "twin.macro";
 import { formatPrice } from "helpers/helpers";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 
@@ -79,11 +79,13 @@ console.log("item",items)
               {items.map((cartItem) => (
               <div key={cartItem.id} className="flex items-center w-full border-b py-4 md:justify-between">
                 <div className="flex items-center space-x-4 w-3/4">
-                  <img
+                <Link to={`/detail-product/${cartItem.id}`}>
+                <img
                     src={`https://lhxsdxtfgwcmsdsxohdi.supabase.co/storage/v1/object/public/images/${cartItem?.images[0]}`}
                     alt={cartItem.name}
                     className="w-[100px] h-[80px] md:w-[200px] md:h-[160px] object-cover"
                   />
+                  </Link>
                   <div>
                     <h3 className="md:text-lg font-semibold">{cartItem.name}</h3>
                     <p className="text-gray-600">{formatPrice(cartItem.price)}</p>
