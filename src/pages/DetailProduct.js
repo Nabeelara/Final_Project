@@ -181,7 +181,7 @@ const DetailProduct = () => {
 
   return (
     <AnimationRevealPage>
-      <Header className={"mb-8"} />
+      <Header/>
 
       <Container className="flex justify-center item-center ">
         <Content>
